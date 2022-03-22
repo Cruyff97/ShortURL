@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   constructor(private shortservice: ShortService, private authService: AuthService) {
     this.authService.signedin$.subscribe((signedin:any) => {
       this.signedin=signedin
+      console.log(this.signedin);
+      
     }
     )
   }
