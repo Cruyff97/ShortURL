@@ -17,7 +17,6 @@ myUrls:any;
 
   ngOnInit(): void {
     console.log("init");
-    
     this.spinner.show();
 this.authService.myUrls.subscribe(res => {
   this.myUrls= res.data;
