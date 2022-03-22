@@ -46,7 +46,7 @@ export class AuthService {
       'Content-Type': 'application/json',
       'Authorization': `${token}`
     });
-    return this.http.get<IMyUrls>('/api/user/urls', {headers: headers} )
+    return this.http.get<IMyUrls>('https://croppy.herokuapp.com/api/user/urls', {headers: headers} )
   }
   constructor(private http: HttpClient) {}
 }
