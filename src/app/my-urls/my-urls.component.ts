@@ -19,7 +19,7 @@ myUrls:any;
     this.spinner.show();
 this.authService.myUrls.subscribe(res => {
   this.myUrls= res.data;
-  console.log(this.myUrls);
+  console.log("qui", this.myUrls);
   this.myUrls.urls.map((data:any) => {
     this.id= data._id
     console.log(this.id);

@@ -1,6 +1,6 @@
 {
     "/api/*": {
-      "target": "https://croppy.herokuapp.com/",
+      "target": "https://croppy.herokuapp.com",
       "secure": false,
       "changeOrigin": true,
       "logLevel": "debug"
