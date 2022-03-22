@@ -17,7 +17,8 @@ myUrls:any;
 
   ngOnInit(): void {
     this.spinner.show();
-this.authService.myUrls.subscribe(res => {
+this.authService.myUrls.subscribe( {
+next: (res) => {
   this.myUrls= res.data;
   console.log("qui", this.myUrls);
   this.myUrls.urls.map((data:any) => {
@@ -28,10 +29,12 @@ this.authService.myUrls.subscribe(res => {
      
     });
     console.log(this.infos);
-  })
-  
-  
-  
+})
+
+},
+error: err => console.error(err),
+complete: () => console.log('complete')
+
 }) 
 
 setTimeout(() => {
