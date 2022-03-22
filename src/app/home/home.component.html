@@ -1,0 +1,36 @@
+
+  <div class="main columns">
+    <div class="column is-half-desktop is-full-mobile">
+      <div>
+        <h2 class="title" color="primary">Life is too short, for long URLs...</h2>
+      </div>
+  <mat-card>
+<p class="insert">Insert a long URL</p>
+<div class="search">
+
+  <mat-form-field  class="example-full-width link-input" appearance="fill">
+    
+    <mat-label>URL</mat-label>
+    <input [(ngModel)]="insertedURL" matInput placeholder="URL" value="">
+    <button color="accent" class="button" (click)="this.signedin ? onInsertedURLlogged(insertedURL, token) : onInsertedURL(insertedURL)" mat-raised-button>
+      Shorten
+    </button>
+  </mat-form-field>
+  <div *ngIf="genSlug" class="res"><a target="_blank" [routerLink]="genSlug" routerLinkActive="router-link-active" >baseUrl/{{genSlug}}</a>
+   
+      <button class="copy-btn" *ngIf="genSlug"  mat-button color="primary" matTooltip="Click to copy"
+      matTooltipClass="example-tooltip-red"
+      aria-label="Button that shows a red tooltip" [cdkCopyToClipboard]=genSlug ><mat-icon color="accent">file_copy</mat-icon></button>
+  
+    
+  </div>
+</div>
+
+  </mat-card>
+    </div>
+    <div class="column is-half-desktop short-man">
+      <img src="assets/images/shorturl-man.svg" alt="" width="600px" sizes="" srcset="">
+    </div>
+    </div>
+   
+    

@@ -1,0 +1,34 @@
+
+.myUrls-title{
+    color: #2eb086; ;
+}
+.list-urls{
+    color: white;
+}
+.url-title{
+    color: #2eb086
+}
+
+.item{
+    word-break: break-all;
+}
+.item:hover{
+    cursor: pointer;
+}
+@media screen and (max-width: 768px){
+.b-table .table-wrapper.has-mobile-cards tr td {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    border-bottom: 1px solid #f5f5f5;
+    align-items: flex-start;
+}
+
+.target{
+    max-width: fit-content;
+    padding: 10px;
+}
+.item{
+    word-break: break-all;
+}
+}

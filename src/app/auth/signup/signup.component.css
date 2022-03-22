@@ -1,0 +1,25 @@
+:host{
+    display: block;
+    margin-bottom: 1em;
+}
+.basic.label{
+    margin-bottom: 0.5em;
+}
+button{
+    margin-bottom: 0.5em;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.register-title{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.container-title{
+    margin-bottom: 30px;
+}

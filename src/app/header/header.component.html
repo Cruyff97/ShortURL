@@ -1,0 +1,27 @@
+<p>
+  <mat-toolbar>
+    
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+     <h3><a class="logo" [routerLink]="['home']" routerLinkActive="router-link-active">shortURL</a></h3>
+    </button>
+    <span class="example-spacer"></span>
+    <div class="menu">
+
+      <button *ngIf="signedin" mat-button>
+       <a [routerLink]="['myUrls']" routerLinkActive="router-link-active" >myURLs</a>
+      </button>
+      <button *ngIf="!signedin" mat-button color="primary">
+        <a routerLink="./signup">Sign Up</a>
+       </button>
+       <a routerLink="signin" routerLinkActive="router-link-active" >
+         <button *ngIf="!signedin" mat-button>
+           Login
+        </button>
+      </a>
+       <button (click)="onSignOut()" *ngIf="signedin" mat-button>
+         Sign Out
+         <mat-icon>logout</mat-icon>
+       </button>
+      </div>
+    </mat-toolbar>
+</p>
