@@ -16,9 +16,10 @@ myUrls:any;
   constructor(private authService : AuthService, private spinner: NgxSpinnerService, private shortService: ShortService) { }
 
   ngOnInit(): void {
+    console.log("init");
+    
     this.spinner.show();
-this.authService.myUrls.subscribe( {
-next: (res) => {
+this.authService.myUrls.subscribe(res => {
   this.myUrls= res.data;
   console.log("qui", this.myUrls);
   this.myUrls.urls.map((data:any) => {
@@ -29,12 +30,10 @@ next: (res) => {
      
     });
     console.log(this.infos);
-})
-
-},
-error: err => console.error(err),
-complete: () => console.log('complete')
-
+  })
+  
+  
+  
 }) 
 
 setTimeout(() => {
