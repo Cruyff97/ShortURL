@@ -6,7 +6,36 @@
     </button>
     <span class="example-spacer"></span>
     <div class="menu">
+      <div class="is-hidden-desktop is-hidden-tablet" id="menu">
+        <div id="menu-bar" (click)="menuOnClick()">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
+        </div>
+        <nav class="nav" id="nav">
+          <ul>
+            <a (click)="menuOnClick()" *ngIf="signedin" color="primary">
+              <li [routerLink]="['myUrls']" routerLinkActive="router-link-active" >myURLs</li>
+             </a>
+             <a (click)="menuOnClick()" *ngIf="!signedin" color="primary">
+               <li routerLink="./signup">Sign Up</li>
+              </a>
+              <a (click)="menuOnClick()" routerLink="signin" routerLinkActive="router-link-active" >
+                <li *ngIf="!signedin" >
+                  Login
+               </li>
+             </a>
+              <li (click)="onSignOut()" *ngIf="signedin">
+                Sign Out
+              </li>
+          </ul>
+        </nav> 
+      </div>
+      
+      <div class="menu-bg" id="menu-bg"></div>
+      <div class="is-hidden-mobile menu-desktop">
 
+      
       <button *ngIf="signedin" mat-button>
        <a [routerLink]="['myUrls']" routerLinkActive="router-link-active" >myURLs</a>
       </button>
@@ -20,8 +49,9 @@
       </a>
        <button (click)="onSignOut()" *ngIf="signedin" mat-button>
          Sign Out
-         <mat-icon>logout</mat-icon>
        </button>
       </div>
+    </div>
+      
     </mat-toolbar>
 </p>

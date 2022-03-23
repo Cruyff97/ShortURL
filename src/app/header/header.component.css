@@ -1,3 +1,105 @@
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 2;
+  }
+  
+  #menu-bar {
+    width: 45px;
+    height: 40px;
+    margin: 20px 41px 0 0;
+    cursor: pointer;
+  }
+  
+  .bar {
+    height: 5px;
+    width: 100%;
+    background-color: #2eb086;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+  
+  #bar1 {
+    transform: translateY(-4px);
+  }
+  
+  #bar3 {
+    transform: translateY(4px);
+  }
+  
+  .nav {
+    transition: 0.3s ease;
+    display: none;
+  }
+  
+  .nav ul {
+    padding: 0 46px;
+    text-align: end;
+  }
+  
+  .nav li {
+    list-style: none;
+    padding: 12px 0;
+  }
+  
+  .nav li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .nav li a:hover {
+    font-weight: bold;
+  }
+  
+  .menu-bg, #menu {
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+  
+  .menu-bg {
+    z-index: 1;
+    width: 0;
+    height: 0;
+    margin: 20px 41px 0 0;
+    background: rgb(66,252,193);
+  background: -moz-linear-gradient(0deg, rgba(66,252,193,1) 0%, rgba(106,189,163,1) 35%, rgba(46,176,134,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(66,252,193,1) 0%, rgba(106,189,163,1) 35%, rgba(46,176,134,1) 100%);
+  background: linear-gradient(0deg, rgba(66,252,193,1) 0%, rgba(106,189,163,1) 35%, rgba(46,176,134,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#42fcc1",endColorstr="#2eb086",GradientType=1);
+
+    border-radius: 50%;
+    transition: 0.3s ease;
+  }
+  
+  .change {
+    display: block;
+  }
+  
+  .change .bar {
+    background-color: white;
+  }
+  
+  .change #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+  }
+  
+  .change #bar2 {
+    opacity: 0;
+  }
+  
+  .change #bar3 {
+    transform: translateY(-6px) rotateZ(45deg);
+  }
+  
+  .change-bg {
+    width: 520px;
+    height: 460px;
+    transform: translate(60%,-30%);
+  }
 .menu{
     border-radius: 5px;
     background-color: #2eb086;

@@ -31,6 +31,7 @@
               "node_modules/bulma/css/bulma.min.css",
               "node_modules/bulma-responsive-tables/css/main.min.css",
               "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/hamburgers/dist/hamburgers.min.css",
               "src/custom-theme.scss",
               "src/styles.css"
             ],
