@@ -5,9 +5,9 @@ import {  AbstractControl, FormGroup, ValidationErrors, Validator } from "@angul
 export class MatchUsername implements Validator {
 public validate(control: AbstractControl): ValidationErrors | null {
     
-        const {username, conf_username}= control.value;
+        const {email, conf_email}= control.value;
         
-        if(username===conf_username){
+        if(email===conf_email){
             return null
         }
         return {'usernamesDontmatch': true}

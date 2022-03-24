@@ -1,5 +1,5 @@
 <div class="container-title">
-    <h1 class="register-title">Create an Account</h1>
+    <h1 class="register-title title">Create an Account</h1>
     <div class="is-flex is-justify-content-center" >   
         <span *ngIf="" class="switch to-sign-in" tabindex="8">
             <span>Already have an account? 
@@ -26,7 +26,7 @@
 <div *ngIf="
 $any(authForm).get('password').touched &&
 $any(authForm).get('conf_password').touched &&
-$any(authForm).errors
+$any(authForm).errors?.passwordsDontmatch
 " class="ui red basic label">
 <mat-error >
     Password and passwordConfirmation must match
@@ -35,7 +35,7 @@ $any(authForm).errors
 <div *ngIf="
 $any(authForm).get('email').touched &&
 $any(authForm).get('conf_email').touched &&
-$any(authForm).errors
+$any(authForm).errors?.usernamesDontmatch
 " class="ui red basic label">
 <mat-error >
     Username and usernameConfirmation must match

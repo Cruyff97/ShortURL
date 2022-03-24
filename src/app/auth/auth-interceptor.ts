@@ -5,6 +5,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from "@angular/c
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+console.log(req);
 
    let token = localStorage.getItem('id_token');
    if (token) {

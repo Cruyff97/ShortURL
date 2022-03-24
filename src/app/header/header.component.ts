@@ -8,6 +8,8 @@ import { trigger, state, style, animate, transition, query, stagger } from '@ang
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  active_wrap=false;
+  disactive_wrap=true;
 collapse=false;
   signedin=false
 token=localStorage.getItem('id_token');
@@ -19,10 +21,21 @@ token=localStorage.getItem('id_token');
    }
    else this.signedin=false
   }
+
+  onWrapper(){
+this.active_wrap= !this.active_wrap
+this.disactive_wrap=!this.disactive_wrap
+this.menuOnClick()
+  }
   menuOnClick() {
     document.getElementById("menu-bar")?.classList.toggle("change");
     document.getElementById("nav")?.classList.toggle("change");
-    document.getElementById("menu-bg")?.classList.toggle("change-bg");
+  }
+  onMenuItemClick(){
+    this.onWrapper();
+    const checkbox_menu = document.querySelector(".checkbox-menu") as HTMLInputElement;
+    console.log(checkbox_menu);
+    checkbox_menu.checked=false
   }
 onSignOut(){
   this.authService.logout();
@@ -30,7 +43,7 @@ onSignOut(){
     this.signedin= signedin;
  
   })
-  this.menuOnClick();
+  this.onMenuItemClick()
   this.router.navigate(['/home']);
 }
 

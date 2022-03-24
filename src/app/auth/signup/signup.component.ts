@@ -62,6 +62,8 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if (this.authForm.invalid) {
+      console.log(this.authForm);
+      
       return;
     }
     console.log(this.authForm.value);
@@ -70,6 +72,8 @@ export class SignupComponent implements OnInit {
       next: (res: any) => console.log(res),
       error: (err: any) => {
         this.errors= err.error
+        console.log(err);
+        
         this.openDialog(ErrorModal, {data: {
           dialogTitle: err.error
         }})
