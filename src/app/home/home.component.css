@@ -1,53 +1,53 @@
-mat-card{
-    margin: 30px;
-
+mat-card {
+  margin: 30px;
 }
 .link-input {
-    display: block;
+  display: block;
 }
-.link{
-    cursor: pointer;
+.link {
+  cursor: pointer;
 }
 .div-search {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+}
+button {
+  color: white;
+  position: absolute;
+  top: -11px;
+  right: -3px;
+}
+.shortener {
+  width: 603px;
+}
+.short-man {
+  padding-right: 20px;
+  margin-top: 48px;
+}
+.main {
+  align-items: center;
+  margin-top: 15px;
+}
+.insert {
+  margin-bottom: 10px;
+  color: #2eb086;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+.title {
+  font-weight: 500;
+  margin: 55px;
+  color: white;
+  margin-top: -89px;
+}
+.copy-btn {
+  margin: 139px;
+}
+.columns {
+  margin-right: 0;
+}
+@media screen and (max-width: 768px) {
+  .title {
+    margin-top: 20px;
   }
-  button {
-      color: white;
-    position: absolute;
-    top: -11px;
-    right: -3px;
-  }
-  .shortener{
-      width: 603px;
-  }
-  .short-man{
-    padding-right: 20px;
-    margin-top: 48px;
-}
-.main{
-    align-items: center;
-    margin-top: 15px;
-}
-.insert{
-    margin-bottom: 10px;
-    color: #2eb086;
-    font-weight: bolder;
-    font-size: 1.2em;
-}
-.title{
-    margin: 55px;
-    color: white;
-    margin-top: -89px;
-}
-.copy-btn{
-    margin: 139px;
-}
-.columns{
-    margin-right: 0;
-}
-@media screen and (max-width: 768px){
-    .title{
-margin-top: 20px;
-    }
 }

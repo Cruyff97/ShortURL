@@ -1,2 +1,1 @@
-export interface LoginRes {
-}
+export interface LoginRes {}

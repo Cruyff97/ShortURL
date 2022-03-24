@@ -1,5 +1,5 @@
-import {Component, Injectable} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { Component, Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 /**
  * @title Dialog elements
@@ -9,7 +9,7 @@ import {MatDialog} from '@angular/material/dialog';
   templateUrl: 'errorModal.component.html',
 })
 @Injectable({
-    providedIn:'root'
+  providedIn: 'root',
 })
 export class DialogElementsExample {
   constructor(public dialog: MatDialog) {}

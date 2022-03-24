@@ -1,53 +1,58 @@
 <div class="body-urls">
-    <ngx-spinner
+  <ngx-spinner
     bdColor="rgba(51,51,51,0.8)"
     size="medium"
     color="#2eb086"
     type="ball-scale-multiple"
   ></ngx-spinner>
-    <h2  class="myUrls-title">All yourl links</h2>
-    <section class="section">
-
-        <div class="container">
-            <div class="b-table">
-    <div class="table-wrapper has-mobile-cards">
-        
-        <table class="table is-fullwidth is-striped is-hoverable is-fullwidth">
+  <h2 class="myUrls-title">All yourl links</h2>
+  <section class="section">
+    <div class="container">
+      <div class="b-table">
+        <div class="table-wrapper has-mobile-cards">
+          <table
+            class="table is-fullwidth is-striped is-hoverable is-fullwidth"
+          >
             <thead>
-                <tr>
-                    <th>target</th>
-                    <th>slug</th>
-                    <th *ngIf="infos">clicks</th>
-                </tr>
+              <tr>
+                <th>target</th>
+                <th>slug</th>
+                <th *ngIf="infos">clicks</th>
+              </tr>
             </thead>
-                <tbody>
-                
-                    <tr *ngFor="let item of myUrls.urls; let i = index;">
-                        
-                            <td data-label="target">
-                                <p matTooltip="Click to copy"
-                                (click)="copied()"
-                                matTooltipClass="example-tooltip-red"
-                                aria-label="Button that shows a red tooltip" [cdkCopyToClipboard]="item.target" class="item">
-                               {{item.target}}
-                           </p>
-                        </td>
-                        <td data-label="slug">
-                        <p matTooltip="Click to copy"
-                        matTooltipClass="example-tooltip-red"
-                        aria-label="Button that shows a red tooltip" [cdkCopyToClipboard]="item.slug" class="item">
-                        {{item.slug}}
-                    </p>
+            <tbody>
+              <tr *ngFor="let item of myUrls.urls; let i = index">
+                <td data-label="target">
+                  <p
+                    matTooltip="Click to copy"
+                    (click)="copied()"
+                    matTooltipClass="example-tooltip-red"
+                    aria-label="Button that shows a red tooltip"
+                    [cdkCopyToClipboard]="item.target"
+                    class="item"
+                  >
+                    {{ item.target }}
+                  </p>
+                </td>
+                <td data-label="slug">
+                  <p
+                    matTooltip="Click to copy"
+                    matTooltipClass="example-tooltip-red"
+                    aria-label="Button that shows a red tooltip"
+                    [cdkCopyToClipboard]="item.slug"
+                    class="item"
+                  >
+                    {{ item.slug }}
+                  </p>
                 </td>
                 <td data-label="clicks">
-                    {{infos[i]}}
+                  {{ infos[i] }}
                 </td>
-            </tr>
-        </tbody>
-          
-        </table>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</section>
+  </section>
 </div>

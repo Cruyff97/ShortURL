@@ -1,9 +1,9 @@
-.ui.pointing{
-    display: table;
+.ui.pointing {
+  display: table;
 }
-.form-field{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }

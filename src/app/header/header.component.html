@@ -1,8 +1,18 @@
 <p>
   <mat-toolbar>
-    
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-     <h3><a class="logo" [routerLink]="['home']" routerLinkActive="router-link-active">shortURL</a></h3>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <h3>
+        <a
+          class="logo"
+          [routerLink]="['home']"
+          routerLinkActive="router-link-active"
+          >shortURL</a
+        >
+      </h3>
     </button>
     <span class="example-spacer"></span>
     <div class="menu">
@@ -35,66 +45,78 @@
               </li>
           </ul>
         </nav>  -->
-        <input (click)="onWrapper()"  type="checkbox" class="checkbox-menu" id="active">
+        <input
+          (click)="onWrapper()"
+          type="checkbox"
+          class="checkbox-menu"
+          id="active"
+        />
         <div class="bars">
-<label id="menu-bar" for="active" class="menu-btn"> <div id="bar1" class="bar"></div>
+          <label id="menu-bar" for="active" class="menu-btn">
+            <div id="bar1" class="bar"></div>
             <div id="bar2" class="bar"></div>
             <div id="bar3" class="bar"></div>
           </label>
         </div>
-        <div  [class.activewrap]="active_wrap" [class.disactivewrap]="disactive_wrap" class="wrapper">
+        <div
+          [class.activewrap]="active_wrap"
+          [class.disactivewrap]="disactive_wrap"
+          class="wrapper"
+        >
           <ul>
             <li (click)="onMenuItemClick()">
-                <a routerLink="home" routerLinkActive="router-link-active" >
+              <a routerLink="home" routerLinkActive="router-link-active">
                 Home
               </a>
-             </li>
-             <li (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
-              <a routerLink="signup" routerLinkActive="router-link-active" >
-              Sign Up
-            </a>
-           </li>
-           <li (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
-            <a routerLink="signin" routerLinkActive="router-link-active" >
-            Sign In
-          </a>
-         </li>
-             <li (click)="onMenuItemClick()" *ngIf="signedin" color="primary" >
-              <a [routerLink]="['myUrls']" routerLinkActive="router-link-active">
-              My URLs
-            </a>
-           </li>
-                        <li>
-              <a (click)="onSignOut()" *ngIf="signedin">
-                Sign Out
+            </li>
+            <li (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
+              <a routerLink="signup" routerLinkActive="router-link-active">
+                Sign Up
               </a>
-                        </li>
-    </ul>
-    </div>
+            </li>
+            <li (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
+              <a routerLink="signin" routerLinkActive="router-link-active">
+                Sign In
+              </a>
+            </li>
+            <li (click)="onMenuItemClick()" *ngIf="signedin" color="primary">
+              <a
+                [routerLink]="['myUrls']"
+                routerLinkActive="router-link-active"
+              >
+                My URLs
+              </a>
+            </li>
+            <li>
+              <a (click)="onSignOut()" *ngIf="signedin"> Sign Out </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      
+
       <div class="menu-bg" id="menu-bg"></div>
       <div class="is-hidden-mobile menu-desktop">
         <button mat-button>
-          <a [routerLink]="['home']" routerLinkActive="router-link-active" >Home</a>
-         </button>
-      
-      <button *ngIf="signedin" mat-button>
-       <a [routerLink]="['myUrls']" routerLinkActive="router-link-active" >myURLs</a>
-      </button>
-      <button *ngIf="!signedin" mat-button color="primary">
-        <a routerLink="./signup">Sign Up</a>
-       </button>
-       <a routerLink="signin" routerLinkActive="router-link-active" >
-         <button *ngIf="!signedin" mat-button>
-           Login
+          <a [routerLink]="['home']" routerLinkActive="router-link-active"
+            >Home</a
+          >
         </button>
-      </a>
-       <button (click)="onSignOut()" *ngIf="signedin" mat-button>
-         Sign Out
-       </button>
+
+        <button *ngIf="signedin" mat-button>
+          <a [routerLink]="['myUrls']" routerLinkActive="router-link-active"
+            >myURLs</a
+          >
+        </button>
+        <button *ngIf="!signedin" mat-button color="primary">
+          <a routerLink="./signup">Sign Up</a>
+        </button>
+        <a routerLink="signin" routerLinkActive="router-link-active">
+          <button *ngIf="!signedin" mat-button>Login</button>
+        </a>
+        <button (click)="onSignOut()" *ngIf="signedin" mat-button>
+          Sign Out
+        </button>
       </div>
     </div>
-      
-    </mat-toolbar>
+  </mat-toolbar>
 </p>

@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-urls',
   templateUrl: './urls.component.html',
-  styleUrls: ['./urls.component.css']
+  styleUrls: ['./urls.component.css'],
 })
 export class UrlsComponent implements OnInit {
-redirectUrl!: string;
-  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient) { }
-
-  
+  redirectUrl!: string;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -20,16 +20,13 @@ redirectUrl!: string;
       return this.http
         .get(`https://croppy.herokuapp.com/v1/get-target/${slug}`)
         .subscribe((response: any) => {
-       this.redirectUrl= response.data.target;
-       this.goToUrl(this.redirectUrl);
-    })
-  })
+          this.redirectUrl = response.data.target;
+          this.goToUrl(this.redirectUrl);
+        });
+    });
+  }
 
-
-
-}
-
-goToUrl(url:string): void {
-  window.location.href = url;
-}
+  goToUrl(url: string): void {
+    window.location.href = url;
+  }
 }

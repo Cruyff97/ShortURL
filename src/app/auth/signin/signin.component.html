@@ -5,21 +5,26 @@
     color="#2eb086"
     type="ball-scale-multiple"
   ></ngx-spinner>
-<h2 class="title has-text-centered">Login</h2>
-  <form  (ngSubmit)="onLogin()" class="form" [formGroup]="loginForm" action="">
+  <h2 class="title has-text-centered">Login</h2>
+  <form (ngSubmit)="onLogin()" class="form" [formGroup]="loginForm" action="">
     <app-input
-    inputType="text"
-    label="Username"
-    [control]="$any(loginForm).get('username')"
+      inputType="text"
+      label="Username"
+      [control]="$any(loginForm).get('username')"
     ></app-input>
     <app-input
-    inputType="password"
-    label="Password"
-    [control]="$any(loginForm).get('password')"
+      inputType="password"
+      label="Password"
+      [control]="$any(loginForm).get('password')"
     ></app-input>
-    <mat-error class="ui pointing red basic label error is-flex has-text-centered is-justify-content-center">{{error}}</mat-error>
+    <mat-error
+      class="ui pointing red basic label error is-flex has-text-centered is-justify-content-center"
+      >{{ error }}</mat-error
+    >
     <div class="is-flex is-justify-content-center">
-      <button type="submit" [disabled]="loginForm.invalid" mat-raised-button>login</button>
+      <button type="submit" [disabled]="loginForm.invalid" mat-raised-button>
+        login
+      </button>
     </div>
   </form>
 </div>

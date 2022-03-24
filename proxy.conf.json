@@ -1,8 +1,8 @@
 {
-    "/api/*": {
-      "target": "https://croppy.herokuapp.com",
-      "secure": false,
-      "changeOrigin": true,
-      "logLevel": "debug"
-    }
+  "/api/*": {
+    "target": "https://croppy.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
+}

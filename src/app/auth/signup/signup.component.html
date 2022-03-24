@@ -1,47 +1,74 @@
 <div class="container-title">
-    <h1 class="register-title title">Create an Account</h1>
-    <div class="is-flex is-justify-content-center" >   
-        <span *ngIf="" class="switch to-sign-in" tabindex="8">
-            <span>Already have an account? 
-            </span>
-            <a href="">Sign In</a>
-        </span>
-    </div>
-</div>
-    <div class="is-flex is-align-content-center is-justify-content-center">
-    <button (click)="loginWithGoogle()" mat-raised-button color="accent" class="google-login-btn">
-        <img width="20" src="https://d1ayxb9ooonjts.cloudfront.net/8bc625062aeffa94729b9336243bed9d.svg" alt="" srcset="">
-        Sign up with  Google
-    </button>
-</div>
-  <div class="is-flex is-align-content-center is-justify-content-center">
-      <span>OR</span>  
+  <h1 class="register-title title">Create an Account</h1>
+  <div class="is-flex is-justify-content-center">
+    <span *ngIf="" class="switch to-sign-in" tabindex="8">
+      <span>Already have an account? </span>
+      <a href="">Sign In</a>
+    </span>
   </div>
-  
+</div>
+<div class="is-flex is-align-content-center is-justify-content-center">
+  <button
+    (click)="loginWithGoogle()"
+    mat-raised-button
+    color="accent"
+    class="google-login-btn"
+  >
+    <img
+      width="20"
+      src="https://d1ayxb9ooonjts.cloudfront.net/8bc625062aeffa94729b9336243bed9d.svg"
+      alt=""
+      srcset=""
+    />
+    Sign up with Google
+  </button>
+</div>
+<div class="is-flex is-align-content-center is-justify-content-center">
+  <span>OR</span>
+</div>
+
 <form (ngSubmit)="onSubmit()" class="form" [formGroup]="authForm" action="">
-    <app-input inputType="text" label="e-mail" [control]="$any(authForm).get('email')"></app-input>
-    <app-input inputType="text" label="e-mail Confirmation" [control]="$any(authForm).get('conf_email')"></app-input>
-    <app-input inputType="password" label="password" [control]="$any(authForm).get('password')"></app-input>
-    <app-input inputType="password" label="password Confirmation" [control]="$any(authForm).get('conf_password')"></app-input>
-<div *ngIf="
-$any(authForm).get('password').touched &&
-$any(authForm).get('conf_password').touched &&
-$any(authForm).errors?.passwordsDontmatch
-" class="ui red basic label">
-<mat-error >
-    Password and passwordConfirmation must match
-</mat-error>
-</div>
-<div *ngIf="
-$any(authForm).get('email').touched &&
-$any(authForm).get('conf_email').touched &&
-$any(authForm).errors?.usernamesDontmatch
-" class="ui red basic label">
-<mat-error >
-    Username and usernameConfirmation must match
-</mat-error>
-</div>
-<div>
-    <button type="submit" mat-raised-button >submit</button>
-</div>
+  <app-input
+    inputType="text"
+    label="e-mail"
+    [control]="$any(authForm).get('email')"
+  ></app-input>
+  <app-input
+    inputType="text"
+    label="e-mail Confirmation"
+    [control]="$any(authForm).get('conf_email')"
+  ></app-input>
+  <app-input
+    inputType="password"
+    label="password"
+    [control]="$any(authForm).get('password')"
+  ></app-input>
+  <app-input
+    inputType="password"
+    label="password Confirmation"
+    [control]="$any(authForm).get('conf_password')"
+  ></app-input>
+  <div
+    *ngIf="
+      $any(authForm).get('password').touched &&
+      $any(authForm).get('conf_password').touched &&
+      $any(authForm).errors?.passwordsDontmatch
+    "
+    class="ui red basic label"
+  >
+    <mat-error> Password and passwordConfirmation must match </mat-error>
+  </div>
+  <div
+    *ngIf="
+      $any(authForm).get('email').touched &&
+      $any(authForm).get('conf_email').touched &&
+      $any(authForm).errors?.usernamesDontmatch
+    "
+    class="ui red basic label"
+  >
+    <mat-error> Username and usernameConfirmation must match </mat-error>
+  </div>
+  <div>
+    <button type="submit" mat-raised-button>submit</button>
+  </div>
 </form>
