@@ -14,6 +14,11 @@
         </div>
         <nav class="nav" id="nav">
           <ul>
+            <a (click)="menuOnClick()" routerLink="home" routerLinkActive="router-link-active" >
+              <li>
+                Home
+             </li>
+           </a>
             <a (click)="menuOnClick()" *ngIf="signedin" color="primary">
               <li [routerLink]="['myUrls']" routerLinkActive="router-link-active" >myURLs</li>
              </a>
@@ -34,7 +39,9 @@
       
       <div class="menu-bg" id="menu-bg"></div>
       <div class="is-hidden-mobile menu-desktop">
-
+        <button mat-button>
+          <a [routerLink]="['home']" routerLinkActive="router-link-active" >Home</a>
+         </button>
       
       <button *ngIf="signedin" mat-button>
        <a [routerLink]="['myUrls']" routerLinkActive="router-link-active" >myURLs</a>
