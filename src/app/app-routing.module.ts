@@ -7,8 +7,9 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    data: { animation: 'togglePage' }
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full', data: { animation: 'togglePage' } },
   { path: 'home/:slug', component: UrlsComponent },
 ];
 

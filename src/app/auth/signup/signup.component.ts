@@ -18,15 +18,15 @@ export class SignupComponent implements OnInit {
   errors?: Array<any>;
   authForm = new FormGroup(
     {
-      email: new FormControl('', [
+      username: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(30),
+        Validators.maxLength(45),
       ]),
-      conf_email: new FormControl('', [
+      conf_username: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(30),
+        Validators.maxLength(45),
       ]),
       password: new FormControl('', [
         Validators.required,
@@ -66,10 +66,10 @@ export class SignupComponent implements OnInit {
 
       return;
     }
-    console.log(this.authForm.value);
-
     this.authService.signUp(this.authForm.value).subscribe({
-      next: (res: any) => console.log(res),
+      next: (res: any) => {
+        this.openDialog(ErrorModal, {data: { created: 'Account created'}});
+        console.log(res)},
       error: (err: any) => {
         this.errors = err.error;
         console.log(err);
@@ -95,14 +95,21 @@ import { Inject } from '@angular/core';
   templateUrl: 'errorModal.component.html',
 })
 export class ErrorModal {
-  dialogTitle: any;
+  dialogTitle?: any;
+dialogcreated?:any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit() {
-    console.log(this.data);
+    if(this.data.dialogTitle){
+      console.log(this.data);
     this.data = this.data.dialogTitle;
-    this.dialogTitle = this.data;
+    this.dialogTitle = this.data;}
+    if(this.data.created){
+    this.data= this.data.created;
+    this.dialogcreated= this.data;
+    console.log(this.data);
+  }
     // will log the entire data object
   }
 }

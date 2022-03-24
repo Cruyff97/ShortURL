@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'dialog-elements-example',
   templateUrl: 'errorModal.component.html',
+styles: ['h3 { color: #2eb086; }']
 })
 @Injectable({
   providedIn: 'root',

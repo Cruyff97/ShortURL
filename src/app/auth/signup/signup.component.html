@@ -31,12 +31,12 @@
   <app-input
     inputType="text"
     label="e-mail"
-    [control]="$any(authForm).get('email')"
+    [control]="$any(authForm).get('username')"
   ></app-input>
   <app-input
     inputType="text"
     label="e-mail Confirmation"
-    [control]="$any(authForm).get('conf_email')"
+    [control]="$any(authForm).get('conf_username')"
   ></app-input>
   <app-input
     inputType="password"
@@ -60,8 +60,8 @@
   </div>
   <div
     *ngIf="
-      $any(authForm).get('email').touched &&
-      $any(authForm).get('conf_email').touched &&
+      $any(authForm).get('username').touched &&
+      $any(authForm).get('conf_username').touched &&
       $any(authForm).errors?.usernamesDontmatch
     "
     class="ui red basic label"
