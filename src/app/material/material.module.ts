@@ -10,12 +10,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {MatIconModule} from '@angular/material/icon'
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [InputComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule
   ],
-  exports:[InputComponent,MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, ClipboardModule, MatTooltipModule, MatIconModule]
+  exports:[InputComponent,MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, ClipboardModule, MatTooltipModule, MatIconModule, MatDialogModule]
 })
 export class MaterialModule { }

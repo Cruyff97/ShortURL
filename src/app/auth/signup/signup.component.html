@@ -19,8 +19,8 @@
   </div>
   
 <form (ngSubmit)="onSubmit()" class="form" [formGroup]="authForm" action="">
-    <app-input inputType="text" label="username" [control]="$any(authForm).get('username')"></app-input>
-    <app-input inputType="text" label="username Confirmation" [control]="$any(authForm).get('conf_username')"></app-input>
+    <app-input inputType="text" label="e-mail" [control]="$any(authForm).get('email')"></app-input>
+    <app-input inputType="text" label="e-mail Confirmation" [control]="$any(authForm).get('conf_email')"></app-input>
     <app-input inputType="password" label="password" [control]="$any(authForm).get('password')"></app-input>
     <app-input inputType="password" label="password Confirmation" [control]="$any(authForm).get('conf_password')"></app-input>
 <div *ngIf="
@@ -33,8 +33,8 @@ $any(authForm).errors
 </mat-error>
 </div>
 <div *ngIf="
-$any(authForm).get('username').touched &&
-$any(authForm).get('conf_username').touched &&
+$any(authForm).get('email').touched &&
+$any(authForm).get('conf_email').touched &&
 $any(authForm).errors
 " class="ui red basic label">
 <mat-error >

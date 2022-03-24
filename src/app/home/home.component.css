@@ -27,7 +27,7 @@ mat-card{
 }
 .main{
     align-items: center;
-    height: 100vh;
+    margin-top: 15px;
 }
 .insert{
     margin-bottom: 10px;
@@ -36,7 +36,6 @@ mat-card{
     font-size: 1.2em;
 }
 .title{
-    position: absolute;
     margin: 55px;
     color: white;
     margin-top: -89px;
@@ -44,9 +43,11 @@ mat-card{
 .copy-btn{
     margin: 139px;
 }
-
+.columns{
+    margin-right: 0;
+}
 @media screen and (max-width: 768px){
     .title{
-margin-top: 209px;
+margin-top: 20px;
     }
 }

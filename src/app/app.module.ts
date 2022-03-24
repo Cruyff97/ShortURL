@@ -19,12 +19,14 @@ import {
   GoogleLoginProvider
 } from 'angularx-social-login';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    UrlsComponent
+    UrlsComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,6 @@ import {
     SocialLoginModule,
     ClipboardModule,
     NgxSpinnerModule
-
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

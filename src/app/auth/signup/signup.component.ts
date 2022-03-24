@@ -2,10 +2,12 @@ import { SocialAuthService } from 'angularx-social-login';
 import { MatchUsername } from './../validators/match-username';
 import { AuthService } from './../auth.service';
 import { GoogleLoginProvider } from 'angularx-social-login';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatchPassword } from '../validators/match-password';
 import { Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog'; 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -13,14 +15,15 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   logged: boolean = false;
+  errors?:Array<any>
   authForm = new FormGroup(
     {
-      username: new FormControl('', [
+      email: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
       ]),
-      conf_username: new FormControl('', [
+      conf_email: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
@@ -45,7 +48,8 @@ export class SignupComponent implements OnInit {
     private matchusername: MatchUsername,
     private authService: AuthService,
     private socialAuthService: SocialAuthService,
-    private router: Router
+    private router: Router,
+    public dialog :MatDialog
   ) {}
 
   ngOnInit(): void {}
@@ -64,8 +68,37 @@ export class SignupComponent implements OnInit {
 
     this.authService.signUp(this.authForm.value).subscribe({
       next: (res: any) => console.log(res),
-      error: (err: any) => console.log(err),
-      complete: () => console.log('ok'),
-    });
+      error: (err: any) => {
+        this.errors= err.error
+        this.openDialog(ErrorModal, {data: {
+          dialogTitle: err.error
+        }})
+        console.log(err.error)},
+        complete: () => console.log('ok'),
+      });
+    }
+    openDialog(component:any, options:any) {
+      this.dialog.open(component, options);
+    }
   }
+  import { MAT_DIALOG_DATA} from '@angular/material/dialog';
+  import { Inject } from '@angular/core';
+  @Component({
+    selector: 'error-modal',
+    templateUrl: 'errorModal.component.html',
+  })
+  export class ErrorModal {
+dialogTitle:any;
+
+constructor(
+   @Inject(MAT_DIALOG_DATA) public data: any
+) { }
+
+ngOnInit() {
+  console.log(this.data)
+  this.data=this.data.dialogTitle
+  this.dialogTitle= this.data
+  // will log the entire data object
 }
+  }
+
