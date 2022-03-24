@@ -44,7 +44,6 @@ export class SigninComponent implements OnInit {
         }
         console.log(err)},
       complete: () => {
-        
         this.loggedEvent.emit((this.logged = true));
         this.spinner.hide();
         this.router.navigate(['home']);
