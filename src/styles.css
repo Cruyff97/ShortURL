@@ -63,3 +63,6 @@ body {
   overflow: auto;
   max-width: 100vw;
 }
+tab[selected="true"] {
+  background-color: rgb(66, 252, 193) !important;
+}
