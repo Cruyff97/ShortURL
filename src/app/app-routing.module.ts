@@ -10,7 +10,7 @@ const routes: Routes = [
     data: { animation: 'togglePage' }
   },
   { path: '', redirectTo: '/home', pathMatch: 'full', data: { animation: 'togglePage' } },
-  { path: '../:slug', component: UrlsComponent }]
+  { path: '../#/:slug', component: UrlsComponent }]
 
   @NgModule({
     imports: [RouterModule.forRoot(routes, {useHash:true})],
