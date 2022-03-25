@@ -30,9 +30,9 @@
         <div *ngIf="genSlug" class="res">
           <a
             target="_blank"
-            [routerLink]="['../', genSlug]"
+            [routerLink]="genSlug"
             routerLinkActive="router-link-active"
-            >shortangular.netlify.app/#/{{ genSlug }}</a
+            >baseUrl/{{ genSlug }}</a
           >
 
           <button
