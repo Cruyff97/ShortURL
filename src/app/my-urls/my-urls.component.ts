@@ -11,8 +11,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class MyUrlsComponent implements OnInit {
   myUrls: any;
   id: any;
-  infos: any = [];
-
+  click_number: any;
+  click_from:any;
+  modal:boolean=false;
+urles:any;
   constructor(
     private authService: AuthService,
     private spinner: NgxSpinnerService,
@@ -23,18 +25,30 @@ export class MyUrlsComponent implements OnInit {
     this.spinner.show();
     this.authService.myUrls.subscribe((res) => {
       this.myUrls = res.data;
-      this.myUrls.urls.map((data: any) => {
-        this.id = data._id;
-        this.shortService.getURLInfos(this.id).subscribe((infos) => {
-          this.infos?.push(infos.data.clicks.length);
-        });
+      this.urles=this.myUrls.urls
+      console.log("urles", this.urles);
       });
-    });
-
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 700);
   }
-  copied() {}
+  openInfosModal(id:any) {
+    console.log(id);
+    console.log(this.myUrls.urls[id])
+    this.id = this.myUrls.urls[id]._id
+    this.shortService.getURLInfos(this.id).subscribe((infos) => {
+      console.log(infos.data);
+      this.click_from= infos.data
+      this.click_number=infos.data.map((clicks:any)=> clicks.count)
+      console.log("number", this.click_number);
+      
+    })
+    
+    this.modal=!this.modal
+  }
+
+  closeInfosModal(){
+    this.modal=!this.modal
+  }
 }

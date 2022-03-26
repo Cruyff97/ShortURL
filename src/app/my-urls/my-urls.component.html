@@ -17,22 +17,15 @@
               <tr>
                 <th>target</th>
                 <th>slug</th>
-                <th *ngIf="infos">clicks</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let item of myUrls.urls; let i = index">
                 <td data-label="target">
-                  <p
-                    matTooltip="Click to copy"
-                    (click)="copied()"
-                    matTooltipClass="example-tooltip-red"
-                    aria-label="Button that shows a red tooltip"
-                    [cdkCopyToClipboard]="item.target"
-                    class="item"
-                  >
-                    {{ item.target }}
+                  <p class="item">
+                    {{ item.target }} 
                   </p>
+                  <button mat-raised-button color="primary" (click)="openInfosModal(i)">info</button>
                 </td>
                 <td data-label="slug">
                   <p
@@ -45,9 +38,6 @@
                     {{ item.slug }}
                   </p>
                 </td>
-                <td data-label="clicks">
-                  {{ infos[i] }}
-                </td>
               </tr>
             </tbody>
           </table>
@@ -55,4 +45,26 @@
       </div>
     </div>
   </section>
+</div>
+<div [class.is-active]="modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card m-2">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Clicks</p>
+      <button (click)="closeInfosModal()" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <table class="charts-css bar show-labels">
+        <tbody>
+
+          <tr *ngFor="let item of click_from; let i=index">
+            <th scope="label">{{click_from[i]._id}}</th>
+            <td style="--size: calc( 40 / 100 )">{{click_number}}</td>
+          </tr>
+        </tbody>
+      
+      </table>
+    </section>
+    <footer class="modal-card-foot"></footer>
+  </div>
 </div>

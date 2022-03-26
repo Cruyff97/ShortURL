@@ -24,6 +24,7 @@
     "angularx-social-login": "^4.0.1",
     "bulma": "^0.9.3",
     "bulma-responsive-tables": "^1.2.3",
+    "charts.css": "^0.9.0",
     "hamburgers": "^1.2.1",
     "ngx-spinner": "^13.1.1",
     "particlesjs": "^2.2.3",
