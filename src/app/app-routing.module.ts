@@ -2,18 +2,30 @@ import { UrlsComponent } from './urls/urls.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { MyUrlsComponent } from './my-urls/my-urls.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    data: { animation: 'togglePage' }
+    data: { animation: 'togglePage' },
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full', data: { animation: 'togglePage' } },
-  { path: '#/:slug', component: UrlsComponent }]
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+    data: { animation: 'togglePage' },
+  },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'myUrls', component: MyUrlsComponent },
+  { path: ':slug', component: UrlsComponent },
+];
 
-  @NgModule({
-    imports: [RouterModule.forRoot(routes, {useHash:true})],
-    exports: [RouterModule],
-  })
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule],
+})
 export class AppRoutingModule {}

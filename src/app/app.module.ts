@@ -1,4 +1,4 @@
-import { AuthModule } from './auth/auth.module';
+
 import { HomeComponent } from './home/home.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,21 +19,26 @@ import {
   SocialAuthServiceConfig,
 } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent, ErrorModal } from './auth/signup/signup.component';
+import { MyUrlsComponent } from './my-urls/my-urls.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent,SigninComponent, SignupComponent, MyUrlsComponent, ErrorModal],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AuthModule,
     SocialLoginModule,
     ClipboardModule,
     NgxSpinnerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [
     {
