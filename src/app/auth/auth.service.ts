@@ -18,12 +18,7 @@ export class AuthService {
       .post(`${this.rootUrl}/v1/auth/register`, credentials, {
         headers: headers,
       })
-      .pipe(
-        tap(() => {
-          this.signedin$.next(true);
-        })
-      );
-  }
+        }
 
   logout() {
     localStorage.removeItem('id_token');
