@@ -20,18 +20,14 @@ export class MyUrlsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('init');
     this.spinner.show();
     this.authService.myUrls.subscribe((res) => {
       this.myUrls = res.data;
-      console.log('qui', this.myUrls);
       this.myUrls.urls.map((data: any) => {
         this.id = data._id;
-        console.log(this.id);
         this.shortService.getURLInfos(this.id).subscribe((infos) => {
           this.infos?.push(infos.data.clicks.length);
         });
-        console.log(this.infos);
       });
     });
 

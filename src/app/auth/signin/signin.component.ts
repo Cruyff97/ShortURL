@@ -40,14 +40,12 @@ export class SigninComponent implements OnInit {
         this.error = '';
         this.spinner.show();
         localStorage.setItem('id_token', res.data.user.jwt);
-        console.log(res);
       },
       error: (err) => {
         if (err.status == 404) {
           this.error = 'Account not found, Sign Up!';
         }
-        console.log(err);
-      },
+       },
       complete: () => {
         this.loggedEvent.emit((this.logged = true));
         this.spinner.hide();

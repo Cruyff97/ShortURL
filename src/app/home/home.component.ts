@@ -20,13 +20,11 @@ export class HomeComponent implements OnInit {
   ) {
     this.authService.signedin$.subscribe((signedin: any) => {
       this.signedin = signedin;
-      console.log(this.signedin);
     });
   }
 
   ngOnInit(): void {}
   onInsertedURLlogged(URL: string, jwt: any) {
-    console.log('logged');
     this.shortservice.shortLogged(URL, jwt).subscribe((results) => {
       this.genSlug = `${results.data.generated_slug}`;
     });

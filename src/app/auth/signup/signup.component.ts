@@ -61,25 +61,16 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.authForm.invalid) {
-      console.log(this.authForm);
-
-      return;
-    }
     this.authService.signUp(this.authForm.value).subscribe({
       next: (res: any) => {
-        this.openDialog(ErrorModal, {data: { created: 'Account created'}});
-        console.log(res)},
+        this.openDialog(ErrorModal, {data: { created: 'Account created'}});},
       error: (err: any) => {
         this.errors = err.error;
-        console.log(err);
-
         this.openDialog(ErrorModal, {
           data: {
             dialogTitle: err.error,
           },
         });
-        console.log(err.error);
       },
       complete: () => console.log('ok'),
     });
@@ -102,13 +93,11 @@ dialogcreated?:any;
 
   ngOnInit() {
     if(this.data.dialogTitle){
-      console.log(this.data);
     this.data = this.data.dialogTitle;
     this.dialogTitle = this.data;}
     if(this.data.created){
     this.data= this.data.created;
     this.dialogcreated= this.data;
-    console.log(this.data);
   }
     // will log the entire data object
   }

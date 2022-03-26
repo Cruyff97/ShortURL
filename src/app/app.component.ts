@@ -19,6 +19,5 @@ export class AppComponent {
   }
   onLogin(tryn: any) {
     this.signedin = true;
-    console.log('appcomp');
   }
 }
