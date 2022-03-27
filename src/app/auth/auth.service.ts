@@ -3,13 +3,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
 import { LoginRes } from '../interface/login-res';
 import { IMyUrls } from '../interface/my-urls';
+import { JwtHelperService} from '@auth0/angular-jwt';
+
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
+  
+  
+  constructor(private http: HttpClient) {}
+  
   rootUrl = 'https://croppy.herokuapp.com';
   signedin$ = new BehaviorSubject(false);
 
+  public isAuthenticated(): boolean {  
+    const jwtHelper = new JwtHelperService() 
+    const token = localStorage.getItem('id_token')!;
+    return !jwtHelper.isTokenExpired(token);
+  }
   signUp(credentials: any) {
     let headers = new HttpHeaders({
       'Access-Control-Allow-Origin': `${this.rootUrl}`,
@@ -49,5 +61,4 @@ export class AuthService {
       headers: headers,
     });
   }
-  constructor(private http: HttpClient) {}
 }

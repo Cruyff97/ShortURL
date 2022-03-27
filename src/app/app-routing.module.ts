@@ -1,11 +1,13 @@
 import { UrlsComponent } from './urls/urls.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate  } from '@angular/router';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { MyUrlsComponent } from './my-urls/my-urls.component';
-
+import { 
+  AuthGuardService as AuthGuard 
+} from './auth/auth-guard.service';
 const routes: Routes = [
   {
     path: 'home',
@@ -18,9 +20,9 @@ const routes: Routes = [
     pathMatch: 'full',
     data: { animation: 'togglePage' },
   },
-  { path: 'signup', component: SignupComponent },
-  { path: 'signin', component: SigninComponent },
-  { path: 'myUrls', component: MyUrlsComponent },
+  { path: 'signup', component: SignupComponent, canActivate: [AuthGuard]  },
+  { path: 'signin', component: SigninComponent, canActivate:[AuthGuard] },
+  { path: 'myUrls', component: MyUrlsComponent, canActivate: [!AuthGuard]},
   { path: ':slug', component: UrlsComponent },
 ];
 

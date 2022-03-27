@@ -1,3 +1,6 @@
+import { AuthGuardService } from './auth/auth-guard.service';
+import { JwtHelperService, JwtModule, JWT_OPTIONS  } from '@auth0/angular-jwt';
+
 
 import { HomeComponent } from './home/home.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
@@ -23,6 +26,10 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent, ErrorModal } from './auth/signup/signup.component';
 import { MyUrlsComponent } from './my-urls/my-urls.component';
 
+export function tokenGetter() {
+  return localStorage.getItem("id_token");
+}
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent,SigninComponent, SignupComponent, MyUrlsComponent, ErrorModal],
   imports: [
@@ -31,6 +38,11 @@ import { MyUrlsComponent } from './my-urls/my-urls.component';
     ReactiveFormsModule,
     MaterialModule,
     BrowserAnimationsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+      },
+    }),
     HttpClientModule,
     SocialLoginModule,
     ClipboardModule,
@@ -41,6 +53,7 @@ import { MyUrlsComponent } from './my-urls/my-urls.component';
     AppRoutingModule
   ],
   providers: [
+    AuthGuardService,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
