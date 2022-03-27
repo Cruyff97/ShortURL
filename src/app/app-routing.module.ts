@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuard]  },
   { path: 'signin', component: SigninComponent, canActivate:[AuthGuard] },
-  { path: 'myUrls', component: MyUrlsComponent, canActivate: [AuthGuard]},
+  { path: 'myUrls', component: MyUrlsComponent,},
   { path: ':slug', component: UrlsComponent },
 ];
 
