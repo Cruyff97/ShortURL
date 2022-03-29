@@ -53,7 +53,7 @@
       <p class="modal-card-title">Map of Clicks</p>
       <button (click)="closeInfosModal()" class="delete" aria-label="close"></button>
     </header>
-    <section class="modal-card-body" *ngIf="click_from">
+    <section class="modal-card-body p-0" *ngIf="click_from">
       <app-map  [click]="click_from" *ngIf="this.modal"></app-map>
   </section>
 
