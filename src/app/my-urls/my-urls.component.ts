@@ -1,8 +1,10 @@
 import { ShortService } from './../services/short.service';
 
 import { AuthService } from './../auth/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+ 
+
 @Component({
   selector: 'app-my-urls',
   templateUrl: './my-urls.component.html',
@@ -13,6 +15,7 @@ export class MyUrlsComponent implements OnInit {
   id: any;
   click_number: any;
   click_from:any;
+  total_clicks:number=0;
   modal:boolean=false;
 urles:any;
   constructor(
@@ -34,16 +37,19 @@ urles:any;
     }, 700);
   }
   openInfosModal(id:any) {
-    console.log(id);
+    this.total_clicks=0
+    this.click_from=''
+
+     console.log(id);
     console.log(this.myUrls.urls[id])
     this.id = this.myUrls.urls[id]._id
     this.shortService.getURLInfos(this.id).subscribe((infos) => {
-      console.log(infos.data);
+      console.log(infos);
       this.click_from= infos.data
-      this.click_number=infos.data.map((clicks:any)=> clicks.count)
-      console.log("number", this.click_number);
-      
-    })
+      infos.data.map((v:any)=> {
+        this.total_clicks+=v.count  
+      })
+     })
     
     this.modal=!this.modal
   }

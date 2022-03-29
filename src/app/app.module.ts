@@ -25,13 +25,15 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent, ErrorModal } from './auth/signup/signup.component';
 import { MyUrlsComponent } from './my-urls/my-urls.component';
+import { MapComponent } from './map/map.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 export function tokenGetter() {
   return localStorage.getItem("id_token");
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent,SigninComponent, SignupComponent, MyUrlsComponent, ErrorModal],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent,SigninComponent, SignupComponent, MyUrlsComponent, ErrorModal, MapComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -50,7 +52,8 @@ export function tokenGetter() {
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ScullyLibModule
   ],
   providers: [
     AuthGuardService,

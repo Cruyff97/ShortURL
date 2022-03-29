@@ -1,3 +1,4 @@
+import { MapComponent } from './map/map.component';
 import { UrlsComponent } from './urls/urls.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuard]  },
   { path: 'signin', component: SigninComponent, canActivate:[AuthGuard] },
   { path: 'myUrls', component: MyUrlsComponent,},
+  {path: 'map', component: MapComponent},
   { path: ':slug', component: UrlsComponent },
 ];
 

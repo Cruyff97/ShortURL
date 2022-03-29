@@ -36,3 +36,14 @@
   max-width: 300px;
   margin: 0 auto;
 }
+
+.footer-infos{
+  font-weight: 500;
+  color: #313552;
+}
+
+.modal-card{
+  
+  width: 80vw;
+
+}

@@ -53,18 +53,14 @@
       <p class="modal-card-title">Clicks</p>
       <button (click)="closeInfosModal()" class="delete" aria-label="close"></button>
     </header>
-    <section class="modal-card-body">
-      <table class="charts-css bar show-labels">
-        <tbody>
+    <section class="modal-card-body" *ngIf="click_from">
+      <app-map  [click]="click_from" *ngIf="this.modal"></app-map>
+  </section>
 
-          <tr *ngFor="let item of click_from; let i=index">
-            <th scope="label">{{click_from[i]._id}}</th>
-            <td style="--size: calc( 40 / 100 )">{{click_number}}</td>
-          </tr>
-        </tbody>
-      
-      </table>
-    </section>
-    <footer class="modal-card-foot"></footer>
+    <footer *ngIf="total_clicks!=0" class="modal-card-foot">
+    <span class="footer-infos">
+      Total clicks: {{total_clicks}}
+    </span>
+    </footer>
   </div>
 </div>
