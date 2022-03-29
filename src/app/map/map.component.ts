@@ -16,7 +16,7 @@ export class MapComponent implements OnInit {
       'pk.eyJ1IjoicGVsbWF0OTciLCJhIjoiY2wxYjN0ZHkzMW1jODNqcGZmcTFnZ2QyOSJ9.fFSrxtClplLuvDOrrXVwAw';
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/dark-v9',
+      style: 'mapbox://styles/mapbox/dark-v10',
       center: [52,5],
       zoom: 1,
       attributionControl: false,
