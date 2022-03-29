@@ -9,26 +9,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: rgb(66, 252, 193);
-  background: -moz-linear-gradient(
-    0deg,
-    rgba(66, 252, 193, 1) 0%,
-    rgba(106, 189, 163, 1) 35%,
-    rgba(46, 176, 134, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    0deg,
-    rgba(66, 252, 193, 1) 0%,
-    rgba(106, 189, 163, 1) 35%,
-    rgba(46, 176, 134, 1) 100%
-  );
-  background: linear-gradient(
-    0deg,
-    rgba(66, 252, 193, 1) 0%,
-    rgba(106, 189, 163, 1) 35%,
-    rgba(46, 176, 134, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#42fcc1",endColorstr="#2eb086",GradientType=1);
+  
 }
 h1 {
   font-size: x-large;
