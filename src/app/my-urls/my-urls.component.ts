@@ -30,11 +30,10 @@ urles:any;
       this.myUrls = res.data;
       this.urles=this.myUrls.urls
       console.log("urles", this.urles);
-      });
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 700);
+    });
+      /** spinner ends after 5 seconds */
+    
   }
   openInfosModal(id:any) {
     this.total_clicks=0

@@ -41,6 +41,7 @@ export class MapComponent implements OnInit {
         // create a HTML element for each feature
         let el = document.createElement('div');
         el.className = 'marker';
+        el.innerHTML=`${clickInfos.count}`
         if (clickInfos.count <= 1) {
           el.classList.add('marker-minor');
         }
@@ -49,7 +50,7 @@ export class MapComponent implements OnInit {
         }
 
         // make a marker for each feature and add to the map
-        new mapboxgl.Marker(el)
+        const marker= new mapboxgl.Marker(el)
           .setLngLat(coordinates)
           .setPopup(
             new mapboxgl.Popup({ offset: 25 }) // add popups
@@ -58,6 +59,7 @@ export class MapComponent implements OnInit {
               )
           )
           .addTo(map);
+
       });
     });
 
