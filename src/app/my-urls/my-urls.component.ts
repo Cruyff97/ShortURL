@@ -16,6 +16,7 @@ export class MyUrlsComponent implements OnInit {
   click_number: any;
   click_from:any;
   total_clicks:number=0;
+  top_location:number=0;
   modal:boolean=false;
 urles:any;
   constructor(

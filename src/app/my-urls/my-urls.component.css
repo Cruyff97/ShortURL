@@ -1,6 +1,4 @@
-.myUrls-title {
-  color: #2eb086;
-}
+
 .list-urls {
   color: white;
 }
@@ -38,8 +36,11 @@
 }
 
 .footer-infos{
-  font-weight: 500;
-  color: #313552;
+ 
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
 }
 
 .modal-card{
@@ -49,4 +50,21 @@
 }
 .modal-card-title{
   font-weight: 500;
+}
+.modal-card-foot{
+  display: block;
+}
+.img-modal{
+  margin-right: 5px;
+}
+
+.infos-modal-datas{
+  font-weight: 500;
+  color: #313552;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
