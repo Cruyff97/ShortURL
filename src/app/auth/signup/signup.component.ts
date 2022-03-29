@@ -65,6 +65,8 @@ export class SignupComponent implements OnInit {
       next: (res: any) => {
         this.openDialog(ErrorModal, {data: { created: 'Account created'}});},
       error: (err: any) => {
+        console.log(err);
+        
         this.errors = err.error;
         this.openDialog(ErrorModal, {
           data: {
@@ -93,12 +95,15 @@ dialogcreated?:any;
 
   ngOnInit() {
     if(this.data.dialogTitle){
-    this.data = this.data.dialogTitle;
-    this.dialogTitle = this.data;}
+      this.data = this.data.dialogTitle;
+      this.dialogTitle = this.data;
+    console.log(this.dialogTitle);
+    
+    }
     if(this.data.created){
     this.data= this.data.created;
     this.dialogcreated= this.data;
   }
-    // will log the entire data object
+    // will log the entire data object  to the console
   }
 }

@@ -15,9 +15,7 @@ styles: ['h3 { color: #2eb086; }']
 export class DialogElementsExample {
   constructor(public dialog: MatDialog) {}
 
-  openDialog() {
-    this.dialog.open(DialogElementsExampleDialog);
-  }
+
 }
 
 export class DialogElementsExampleDialog {}
