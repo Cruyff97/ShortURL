@@ -34,7 +34,7 @@ export class MapComponent implements OnInit {
         let longitude = res[0].lon;
         console.log('latitude', latitude);
         console.log('longitude', longitude);
-        let coordinates = [longitude, latitude];
+        let coordinates: [number, number] = [longitude, latitude];
         console.log('coordinates', coordinates);
         let message = res[0].display_name;
 
