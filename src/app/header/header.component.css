@@ -157,7 +157,7 @@ new */
   /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
   /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
   /* clip-path: circle(25px at calc(0% + 45px) 45px); */
-  background: whitesmoke;
+  background: #313552;
 
   clip-path: circle(25px at calc(100% - 45px) 45px);
   transition: all 0.3s ease-in-out;
@@ -247,4 +247,9 @@ input[type="checkbox"] {
   100% {
     filter: hue-rotate(360deg);
   }
+}
+
+.mat-toolbar-single-row {
+
+  background-color: #313552;
 }
