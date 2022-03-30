@@ -5,7 +5,7 @@
     color="#2eb086"
     type="ball-scale-multiple"
   ></ngx-spinner>
-  <h2 class="title">All yourl links</h2>
+  <app-overview [total_urls_clicks]="total_clicks" [total_urls]="total_urls"></app-overview>
   <section class="section">
     <div class="container">
       <div class="b-table">
@@ -57,11 +57,11 @@
       <app-map  [click]="click_from" *ngIf="this.modal"></app-map>
   </section>
 
-    <footer *ngIf="total_clicks!=0" class="modal-card-foot">
+    <footer *ngIf="total_clicks_single!=0" class="modal-card-foot">
     <div class="footer-infos">
      <img class="img-modal" src="./assets/icons8-statistic-32.png" width="20px" alt="" srcset=""> 
      <span class="infos-modal-title">TOTAL CLICKS:</span>  
-     <span class="infos-modal-datas">{{total_clicks}}</span>
+     <span class="infos-modal-datas">{{total_clicks_single}}</span>
     </div>
     </footer>
   </div>

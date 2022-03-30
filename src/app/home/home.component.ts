@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   genSlug!: string;
   urlBase: string = 'https://croppy.herokuapp.com';
   token = localStorage.getItem('id_token');
+  link: string='';
 
   constructor(
     private shortservice: ShortService,
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
   onInsertedURLlogged(URL: string, jwt: any) {
     this.shortservice.shortLogged(URL, jwt).subscribe((results) => {
       this.genSlug = `${results.data.generated_slug}`;
+      this.link=`shortangular.netlify.app/${this.genSlug}`
     });
   }
   onInsertedURL(URL: string) {
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
 
     this.shortservice.shortNotLogged(URL).subscribe((results) => {
       this.genSlug = `${results.data.generated_slug}`;
+      this.link=`shortangular.netlify.app/${this.genSlug}`
     });
   }
 }

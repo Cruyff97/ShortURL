@@ -41,7 +41,8 @@ button {
   margin-top: -89px;
 }
 .copy-btn {
-  margin: 139px;
+  margin-top: 139px;
+  margin-right: 15px;
 }
 .columns {
   margin-right: 0;
