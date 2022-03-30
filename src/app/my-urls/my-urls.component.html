@@ -16,7 +16,7 @@
             <thead>
               <tr>
                 <th>Target</th>
-                <th>Slug</th>
+                <th>Link</th>
               </tr>
             </thead>
             <tbody>
@@ -27,15 +27,15 @@
                   </p>
                   <button mat-raised-button color="primary" (click)="openInfosModal(i)">info</button>
                 </td>
-                <td data-label="slug">
+                <td data-label="link">
                   <p
                     matTooltip="Click to copy"
                     matTooltipClass="example-tooltip-red"
                     aria-label="Button that shows a red tooltip"
-                    [cdkCopyToClipboard]="item.slug"
+                    [cdkCopyToClipboard]="copy(item.slug)"
                     class="item"
                   >
-                    {{ item.slug }}
+                  shortangular.netlify.app/{{ item.slug }}
                   </p>
                 </td>
               </tr>

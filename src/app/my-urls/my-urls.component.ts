@@ -50,6 +50,11 @@ urles:any;
     });
     
   })}
+
+copy(slug:any){
+ return  `shortangular.netlify.app/${slug}`
+}
+
   openInfosModal(id:any) {
     this.total_clicks_single=0
     this.click_from=''
