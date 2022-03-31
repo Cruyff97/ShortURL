@@ -1,5 +1,11 @@
 <div class="main columns">
   <div class="column is-half-desktop is-full-mobile">
+    <ngx-spinner
+      bdColor="rgba(51,51,51,0.8)"
+      size="medium"
+      color="#2eb086"
+      type="ball-scale-multiple"
+    ></ngx-spinner>
     <div>
       <h2 class="title" color="primary">Life is too short, for long URLs...</h2>
     </div>
@@ -35,18 +41,23 @@
             </mat-form-field>
             <button mat-button>Save</button>
           </div>
-          <div *ngIf="genSlug" class="gen-link">    
-            <svg class="ft-green-tick" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 48 48" aria-hidden="true">
+          <div *ngIf="genSlug" class="gen-link">   
+            <div class="slug">
+
+              <svg class="ft-green-tick" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 48 48" aria-hidden="true">
                 <circle class="circle" fill="#5bb543" cx="24" cy="24" r="22"/>
                 <path class="tick" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M14 27l5.917 4.917L34 17"/>
-            </svg>
-            <a
-            target="_blank"
-            [routerLink]="['../', genSlug]"
-            routerLinkActive="router-link-active"
-            >shortangular.netlify.app/{{ genSlug }}</a
-            >
-            <button name="copy" ngDefaultControl (click)="copied()" class="copy-btn" [(ngModel)]="copy" color="primary" [cdkCopyToClipboard]="link" mat-button>{{copy}}</button>
+              </svg>
+              <a
+              target="_blank"
+              [routerLink]="['../', genSlug]"
+              routerLinkActive="router-link-active"
+              >shortangular.netlify.app/{{ genSlug }}</a
+              >
+            </div> 
+            <div class="copy-btn-div">
+              <button name="copy" ngDefaultControl (click)="copied()" class="copy-btn" [(ngModel)]="copy" color="primary" [cdkCopyToClipboard]="link" mat-button>{{copy}}</button>
+            </div>
             
           </div>
         </div>

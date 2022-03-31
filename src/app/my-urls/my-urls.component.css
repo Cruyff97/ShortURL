@@ -83,6 +83,9 @@
 .td-target{
   cursor: pointer;
 }
+.slug{
+  display: flex;
+}
 
 
 @media screen and (min-width: 768px) {

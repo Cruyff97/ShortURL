@@ -50,12 +50,21 @@ mat-card {
   .title {
     margin-top: 20px;
   }
+  .gen-link{
+    display: block;
+  }
 }
-
-.gen-link{
+.slug{
   display: flex;
-  align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .gen-link{
+    display: flex;
+    align-items: center;
+  }
+}
+  
+
 .ft-green-tick{
   margin-right: 10px;
 }

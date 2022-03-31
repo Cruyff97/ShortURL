@@ -1,6 +1,7 @@
 import { AuthService } from './../auth/auth.service';
 import { ShortService } from './../services/short.service';
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit {
   copy:string='Copy';
   constructor(
     private shortservice: ShortService,
-    private authService: AuthService
+    private authService: AuthService,
+    private spinner: NgxSpinnerService,
   ) {}
 
   ngOnInit(): void {
@@ -33,9 +35,11 @@ export class HomeComponent implements OnInit {
     this.signedin = this.authService.loggedIn();
   }
   onInsertedURLlogged(URL: string, jwt: any) {
+    this.spinner.show();
     this.shortservice.shortLogged(URL, jwt).subscribe((results) => {
       this.genSlug = `${results.data.generated_slug}`;
       this.link = `shortangular.netlify.app/${this.genSlug}`;
+      this.spinner.hide();
     });
   }
   onInsertedURL(URL: string) {
