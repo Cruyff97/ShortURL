@@ -22,6 +22,18 @@ export class AuthService {
     const token = localStorage.getItem('id_token')!;
     return !jwtHelper.isTokenExpired(token);
   }
+
+validateJwt() {
+  let token = localStorage.getItem('id_token');
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `${token}`,
+    });
+    return this.http.get(`${this.rootUrl}/validate/jwt`,{
+      headers: headers,
+    });
+  }
+
   signUp(credentials: any) {
     let headers = new HttpHeaders({
       'Access-Control-Allow-Origin': `${this.rootUrl}`,

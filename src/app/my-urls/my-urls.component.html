@@ -21,11 +21,10 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of myUrls.urls; let i = index">
-                <td data-label="target">
+                <td class="td-target" (click)="openInfosModal(i)" data-label="target">
                   <p class="item">
                     {{ item.target }} 
                   </p>
-                  <button mat-raised-button color="primary" (click)="openInfosModal(i)">info</button>
                 </td>
                 <td data-label="link">
                   <p
@@ -38,6 +37,12 @@
                   shortangular.netlify.app/{{ item.slug }}
                   </p>
                 </td>
+                <td data-label="actions">
+                  <div class="actions">
+                    <button class="info-action" mat-mini-fab color="primary" (click)="openInfosModal(i)">info</button>
+                    <mat-icon (click)="openDeleteModal(i)" class="delete-action">delete</mat-icon>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -45,6 +50,23 @@
       </div>
     </div>
   </section>
+</div>
+<div [class.is-active]="modal_deleting" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card delete-modal m-2 ">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Confirmation</p>
+
+      <button color="warn" (click)="closeDeleteModal()" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body p-0">
+      <p>Are you sure you want to delete this URL?</p> 
+    </section>
+    <footer class="modal-card-foot">
+      <button (click)="deleteUrl(actual_index)" mat-raised-button color="warn">yes</button>
+    <button (click)="closeDeleteModal()" mat-button >no</button>
+  </footer>
+  </div>
 </div>
 <div [class.is-active]="modal" class="modal">
   <div class="modal-background"></div>

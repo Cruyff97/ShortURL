@@ -44,9 +44,8 @@
 }
 
 .modal-card{
-  
+  text-align: center;
   width: 80vw;
-
 }
 .modal-card-title{
   font-weight: 500;
@@ -67,4 +66,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+  .actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info-action{
+    margin: 10px;
+  }
+.delete-action:hover{
+  cursor: pointer;
+  color: #b8405e;
+}
+.td-target{
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 768px) {
+.delete-modal{
+  width: calc(50% - 20px);
+  padding: 20px;
+}
+
 }

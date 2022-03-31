@@ -24,7 +24,15 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+this.authService.validateJwt().subscribe((validateRes: any) => {
+if(validateRes.status==403){
+  this.authService.logout();
+}
+
+})
+
+  }
   onInsertedURLlogged(URL: string, jwt: any) {
     this.shortservice.shortLogged(URL, jwt).subscribe((results) => {
       this.genSlug = `${results.data.generated_slug}`;
