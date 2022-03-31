@@ -4,8 +4,9 @@
     size="medium"
     color="#2eb086"
     type="ball-scale-multiple"
-  ></ngx-spinner>
-  <app-overview [total_urls_clicks]="total_clicks" [total_urls]="total_urls"></app-overview>
+    ></ngx-spinner>
+    
+    <app-overview [total_urls_clicks]="total_clicks" [total_urls]="total_urls"></app-overview>
   <section class="section">
     <div class="container">
       <div class="b-table">
@@ -21,20 +22,20 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of myUrls.urls; let i = index">
-                <td class="td-target" (click)="openInfosModal(i)" data-label="target">
-                  <p class="item">
-                    {{ item.target }} 
-                  </p>
-                </td>
-                <td data-label="link">
+                <td data-label="Link">
                   <p
                     matTooltip="Click to copy"
                     matTooltipClass="example-tooltip-red"
                     aria-label="Button that shows a red tooltip"
                     [cdkCopyToClipboard]="copy(item.slug)"
-                    class="item"
+                    class="item p-link"
                   >
                   shortangular.netlify.app/{{ item.slug }}
+                  </p>
+                </td>
+                <td class="td-target" (click)="openInfosModal(i)" data-label="Destination">
+                  <p class="item">
+                    {{ item.target }} 
                   </p>
                 </td>
                 <td data-label="actions">

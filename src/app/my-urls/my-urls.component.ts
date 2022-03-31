@@ -32,6 +32,7 @@ export class MyUrlsComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
+    
     this.authService.validateJwt().subscribe((validateRes: any) => {
       if (validateRes.status == 403) {
         this.authService.logout();
@@ -56,9 +57,8 @@ export class MyUrlsComponent implements OnInit {
       this.spinner.hide();
     });
   }
-
   copy(slug: any) {
-    return `shortangular.netlify.app/${slug}`;
+    return `shortangular.netlify.app/${slug}`
   }
 
   openInfosModal(id: any) {

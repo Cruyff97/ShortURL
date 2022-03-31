@@ -20,6 +20,16 @@
     border-bottom: 1px solid #f5f5f5;
     align-items: flex-start;
   }
+  .copied{
+    display: flex;
+    background: #fafafa;
+    height: 40px;
+    width: 252px;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    z-index: 1;
+  }
 
   .target {
     max-width: fit-content;
@@ -83,8 +93,8 @@
 .td-target{
   cursor: pointer;
 }
-.slug{
-  display: flex;
+.p-link{
+  color: #2eb086;
 }
 
 
