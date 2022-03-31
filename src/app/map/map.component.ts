@@ -41,7 +41,6 @@ export class MapComponent implements OnInit {
         // create a HTML element for each feature
         let el = document.createElement('div');
         el.className = 'marker';
-        el.innerHTML=`${clickInfos.count}`
         if (clickInfos.count <= 1) {
           el.classList.add('marker-minor');
         }
