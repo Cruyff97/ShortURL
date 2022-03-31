@@ -39,7 +39,6 @@ export class SigninComponent implements OnInit {
       next: (res) => {
         this.error = '';
         this.spinner.show();
-        console.log(this.spinner);
         
         localStorage.setItem('id_token', res.data.user.jwt);
       },

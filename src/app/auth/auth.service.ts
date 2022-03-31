@@ -34,6 +34,13 @@ validateJwt() {
     });
   }
 
+  loggedIn() {
+    if(localStorage.getItem('id_token')){
+      return true;
+    }
+    return false;
+  }
+
   signUp(credentials: any) {
     let headers = new HttpHeaders({
       'Access-Control-Allow-Origin': `${this.rootUrl}`,

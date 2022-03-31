@@ -1,15 +1,7 @@
 import { Router } from '@angular/router';
 import { AuthService } from './../auth/auth.service';
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  query,
-  stagger,
-} from '@angular/animations';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -20,16 +12,13 @@ export class HeaderComponent implements OnInit {
   disactive_wrap = true;
   collapse = false;
   @Input() signedin = false;
-  token = localStorage.getItem('id_token');
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService.signedin$.subscribe((signedin: any) => {
       this.signedin = signedin;
     });
-    if (this.token) {
-      this.signedin = true;
-    }
+    this.signedin= this.authService.loggedIn();
   }
   onWrapper() {
     this.active_wrap = !this.active_wrap;
