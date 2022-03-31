@@ -12,7 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
-  declarations: [InputComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -23,7 +22,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
   ],
   exports: [
-    InputComponent,
     MatToolbarModule,
     MatCardModule,
     MatFormFieldModule,

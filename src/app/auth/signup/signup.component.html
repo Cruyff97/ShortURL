@@ -44,10 +44,11 @@
     [control]="$any(authForm).get('password')"
   ></app-input>
   <app-input
-    inputType="password"
+    inputType={{inputType}}
     label="password Confirmation"
     [control]="$any(authForm).get('conf_password')"
-  ></app-input>
+  >
+</app-input>
   <div
     *ngIf="
       $any(authForm).get('password').touched &&

@@ -16,6 +16,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class SignupComponent implements OnInit {
   logged: boolean = false;
   errors?: Array<any>;
+  inputType:any="password"
+  hide=true;
   authForm = new FormGroup(
     {
       username: new FormControl('', [
@@ -92,7 +94,6 @@ export class ErrorModal {
 dialogcreated?:any;
   more_errors?: boolean;
   one_error?: boolean;
-
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit() {

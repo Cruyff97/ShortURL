@@ -3,12 +3,22 @@
     <mat-form-field class="input-login">
       <mat-label>{{ label }}</mat-label>
       <input
+      *ngIf="inputType !== 'password'"
         type="{{ inputType }}"
         matInput
         [formControl]="control"
         placeholder="{{ label }}"
         autocomplete="off"
       />
+      <input *ngIf="inputType ==='password'"
+      [type]=" hide ? 'password' : 'text'"
+      matInput
+      [formControl]="control"
+      placeholder="{{ label }}"
+      autocomplete="off"
+    />
+    
+      <mat-icon *ngIf="inputType=='password'" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </mat-form-field>
   </div>
 

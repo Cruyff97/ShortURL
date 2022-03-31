@@ -10,6 +10,7 @@ export class InputComponent implements OnInit {
   @Input() inputType!: string;
   @Input() label!: string;
   @Input() control!: FormControl;
+  hide=true
   constructor() {}
 
   ngOnInit(): void {}

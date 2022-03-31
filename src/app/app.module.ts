@@ -2,8 +2,6 @@ import { SignupComponent, ErrorModal } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-services/auth-interceptor';
 import { AuthGuardService } from './auth/auth-services/auth-guard.service';
 import { JwtHelperService, JwtModule, JWT_OPTIONS  } from '@auth0/angular-jwt';
-
-
 import { HomeComponent } from './home/home.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +12,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
+import { InputComponent } from './input/input.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { UrlsComponent } from './urls/urls.component';
@@ -35,7 +34,7 @@ export function tokenGetter() {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent,SigninComponent, SignupComponent, MyUrlsComponent, ErrorModal, MapComponent, MyUrlsOverviewComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent,SigninComponent, SignupComponent, MyUrlsComponent, ErrorModal, MapComponent, MyUrlsOverviewComponent, InputComponent],
   imports: [
     BrowserModule,
     FormsModule,
