@@ -23,16 +23,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.authService.validateJwt().subscribe((validateRes: any) => {
-      switch (validateRes.status) {
-        case 403:          
-          this.authService.logout();
-          break;
-        case 200:
-          break;
-      }
-    });
-    this.signedin = this.authService.loggedIn();
+        this.signedin = this.authService.loggedIn();
   }
   onInsertedURLlogged(URL: string, jwt: any) {
     this.spinner.show();

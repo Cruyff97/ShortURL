@@ -25,13 +25,8 @@ export class AuthService {
 
 validateJwt() {
   let token = localStorage.getItem('id_token');
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `${token}`,
-    });
-    return this.http.get(`${this.rootUrl}/validate/jwt`,{
-      headers: headers,
-    });
+
+    return this.http.get(`${this.rootUrl}/validate/jwt`);
   }
 
   loggedIn() {
@@ -71,13 +66,7 @@ validateJwt() {
   }
 
   get myUrls() {
-    let token = localStorage.getItem('id_token');
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `${token}`,
-    });
-    return this.http.get<IMyUrls>(`${this.rootUrl}/api/user/urls`, {
-      headers: headers,
-    });
+
+    return this.http.get<IMyUrls>(`${this.rootUrl}/api/user/urls`);
   }
 }
