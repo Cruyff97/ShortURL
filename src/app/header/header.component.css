@@ -248,6 +248,7 @@ input[type="checkbox"] {
 }
 
 .mat-toolbar-single-row {
-
+  position: fixed;
+  z-index: 1;
   background-color: #313552;
 }
