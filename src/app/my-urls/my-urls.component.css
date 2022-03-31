@@ -74,6 +74,7 @@
   }
   .info-action{
     margin: 10px;
+    margin-right: 40px;
   }
 .delete-action:hover{
   cursor: pointer;
