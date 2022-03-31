@@ -1,4 +1,4 @@
-# Short
+# ShortURL
 This is the typical link shortener used for reduce a long url. I develop all the Front-end of this application using Angular.
 
 # Demo
