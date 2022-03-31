@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
-import { LoginRes } from '../interface/login-res';
-import { IMyUrls } from '../interface/my-urls';
+import { LoginRes } from 'src/app/interface/login-res';
+import { IMyUrls } from 'src/app/interface/my-urls';
 import { JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({

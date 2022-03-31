@@ -1,15 +1,14 @@
 <div mat-dialog-content>
   <div *ngIf="dialogcreated">
-    <h3 class="created" color="accent">{{dialogcreated}}</h3>
+    <h3  class="created" color="accent">{{dialogcreated}}</h3>
 
   </div>
   <span *ngIf="dialogTitle">
-
-    <span *ngIf="dialogTitle[0].msg">
+    <span *ngIf="more_errors">
       <mat-error *ngFor="let item of dialogTitle">{{ item.msg }}</mat-error>
     </span>
-    <span *ngIf="dialogTitle.message">
-      <mat-error>{{dialogTitle.message}}</mat-error>
+    <span *ngIf="one_error">
+      <mat-error >{{dialogTitle.message}}</mat-error>
     </span>
   </span>
 </div>

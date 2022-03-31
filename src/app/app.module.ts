@@ -1,4 +1,6 @@
-import { AuthGuardService } from './auth/auth-guard.service';
+import { SignupComponent, ErrorModal } from './auth/signup/signup.component';
+import { AuthInterceptor } from './auth/auth-services/auth-interceptor';
+import { AuthGuardService } from './auth/auth-services/auth-guard.service';
 import { JwtHelperService, JwtModule, JWT_OPTIONS  } from '@auth0/angular-jwt';
 
 
@@ -13,7 +15,6 @@ import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './auth/auth-interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { UrlsComponent } from './urls/urls.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
@@ -23,7 +24,7 @@ import {
 } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent, ErrorModal } from './auth/signup/signup.component';
+
 import { MyUrlsComponent } from './my-urls/my-urls.component';
 import { MapComponent } from './map/map.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';

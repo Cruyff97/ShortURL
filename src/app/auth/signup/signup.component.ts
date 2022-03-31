@@ -1,6 +1,6 @@
+import { AuthService } from './../auth-services/auth.service';
 import { SocialAuthService } from 'angularx-social-login';
 import { MatchUsername } from './../validators/match-username';
-import { AuthService } from './../auth.service';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -90,6 +90,8 @@ import { Inject } from '@angular/core';
 export class ErrorModal {
   dialogTitle?: any;
 dialogcreated?:any;
+  more_errors?: boolean;
+  one_error?: boolean;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
@@ -97,7 +99,13 @@ dialogcreated?:any;
     if(this.data.dialogTitle){
       this.data = this.data.dialogTitle;
       this.dialogTitle = this.data;
-    console.log(this.dialogTitle);
+      if(this.dialogTitle[0]){
+        this.more_errors= true
+      }
+      else{
+        this.one_error=true
+      }
+    console.log("dialogtitle",this.dialogTitle);
     
     }
     if(this.data.created){

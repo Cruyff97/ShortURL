@@ -13,6 +13,8 @@ styles: ['h3 { color: #2eb086; }']
   providedIn: 'root',
 })
 export class DialogElementsExample {
+  dialogcreated?:any;
+  dialogTitle?:any
   constructor(public dialog: MatDialog) {}
 
 

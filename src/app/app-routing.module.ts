@@ -8,7 +8,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { MyUrlsComponent } from './my-urls/my-urls.component';
 import { 
   AuthGuardService as AuthGuard 
-} from './auth/auth-guard.service';
+} from './auth/auth-services/auth-guard.service';
 const routes: Routes = [
   {
     path: 'home',
