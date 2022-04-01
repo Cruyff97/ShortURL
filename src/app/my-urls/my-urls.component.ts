@@ -3,7 +3,6 @@ import { ShortService } from './../services/short.service';
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-my-urls',
   templateUrl: './my-urls.component.html',

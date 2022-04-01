@@ -15,7 +15,9 @@ h1 {
   font-size: x-large;
   font-weight: 400;
 }
-
+.material-icons{
+  font-family: 'Material Icons' !important;
+}
 .example-spacer {
   flex: 1 1 auto;
 }
