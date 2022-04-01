@@ -31,14 +31,7 @@ export class MyUrlsComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
-    
-    this.authService.validateJwt().subscribe((validateRes: any) => {
-      if (validateRes.status == 403) {
-        this.authService.logout();
-        this.router.navigate(['/home']);
-      }
-    });
-
+  
     
     this.authService.myUrls.subscribe((res) => {
       this.myUrls = res.data;

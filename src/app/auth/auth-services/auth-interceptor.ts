@@ -28,6 +28,8 @@ export class AuthInterceptor implements HttpInterceptor {
         tap((event) => {
           if (event instanceof HttpErrorResponse) {
             if (event.status == 403) {
+              console.log(event);
+              
               this.authService.logout();
               this.router.navigate(['/signin']);
             }
