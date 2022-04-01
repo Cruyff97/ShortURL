@@ -64,22 +64,22 @@
           class="wrapper"
         >
           <ul>
-            <li (click)="onMenuItemClick()">
+            <li class="header-li" (click)="onMenuItemClick()">
               <a routerLink="home" routerLinkActive="router-link-active">
-                HOME
+                Home
               </a>
             </li>
-            <li (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
+            <li class="header-li" (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
               <a routerLink="signup" routerLinkActive="router-link-active">
-                SIGN UP
+                Sign Up
               </a>
             </li>
-            <li (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
+            <li class="header-li" (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
               <a routerLink="signin" routerLinkActive="router-link-active">
-                SIGN IN
+                Sign In
               </a>
             </li>
-            <li (click)="onMenuItemClick()" *ngIf="signedin" color="primary">
+            <li class="header-li" (click)="onMenuItemClick()" *ngIf="signedin" color="primary">
               <a
                 [routerLink]="['myUrls']"
                 routerLinkActive="router-link-active"
@@ -87,7 +87,7 @@
                 My URLs
               </a>
             </li>
-            <li>
+            <li class="header-li">
               <a (click)="onSignOut()" *ngIf="signedin"> Sign Out </a>
             </li>
           </ul>
@@ -97,23 +97,23 @@
       <div class="menu-bg" id="menu-bg"></div>
       <div class="is-hidden-mobile menu-desktop">
         <button mat-button>
-          <a [routerLink]="['home']" routerLinkActive="router-link-active"
+          <a class="header-li" [routerLink]="['home']" routerLinkActive="router-link-active"
             >Home</a
           >
         </button>
 
         <button *ngIf="signedin" mat-button>
-          <a [routerLink]="['myUrls']" routerLinkActive="router-link-active"
+          <a class="header-li" [routerLink]="['myUrls']" routerLinkActive="router-link-active"
             >myURLs</a
           >
         </button>
         <button *ngIf="!signedin" mat-button color="primary">
-          <a routerLink="./signup">Sign Up</a>
+          <a class="header-li" routerLink="./signup">Sign Up</a>
         </button>
-        <a routerLink="signin" routerLinkActive="router-link-active">
+        <a class="header-li" routerLink="signin" routerLinkActive="router-link-active">
           <button *ngIf="!signedin" mat-button>Login</button>
         </a>
-        <button (click)="onSignOut()" *ngIf="signedin" mat-button>
+        <button class="header-li" (click)="onSignOut()" *ngIf="signedin" mat-button>
           Sign Out
         </button>
       </div>
