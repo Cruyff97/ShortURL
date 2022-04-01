@@ -6,10 +6,12 @@
     type="ball-scale-multiple"
   ></ngx-spinner>
   <h2 class="title has-text-centered">Login</h2>
+  <div class="card">
+    <div class="card-content">
   <form (ngSubmit)="onLogin()" class="form" [formGroup]="loginForm" action="">
     <app-input
       inputType="text"
-      label="Username"
+      label="E-mail"
       [control]="$any(loginForm).get('username')"
     ></app-input>
     <app-input
@@ -27,4 +29,6 @@
       </button>
     </div>
   </form>
+    </div>
+  </div>
 </div>

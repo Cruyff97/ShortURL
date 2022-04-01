@@ -8,3 +8,14 @@
 .error {
   margin: 20px;
 }
+@media screen and (max-width: 768px) {
+  .card {
+    margin: auto 7vw;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .card {
+      margin: auto 30vw;
+      }
+    }
