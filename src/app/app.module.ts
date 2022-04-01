@@ -28,13 +28,14 @@ import { MyUrlsComponent } from './my-urls/my-urls.component';
 import { MapComponent } from './map/map.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { MyUrlsOverviewComponent } from './my-urls-overview/my-urls-overview.component';
+import { FirstLoginComponent } from './first-login/first-login.component';
 
 export function tokenGetter() {
   return localStorage.getItem("id_token");
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent,SigninComponent, SignupComponent, MyUrlsComponent, ErrorModal, MapComponent, MyUrlsOverviewComponent, InputComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, UrlsComponent,SigninComponent, SignupComponent, MyUrlsComponent, ErrorModal, MapComponent, MyUrlsOverviewComponent, InputComponent, FirstLoginComponent],
   imports: [
     BrowserModule,
     FormsModule,

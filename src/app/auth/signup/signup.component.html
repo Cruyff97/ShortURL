@@ -39,6 +39,11 @@
     label="Enter yout password"
     [control]="$any(authForm).get('password')"
   ></app-input>
+  <div class="information-password"> 
+    <p class="pass-info">
+      min 8 characters, max 15characters, a number and a uppercase letter
+    </p>
+  </div>
   <app-input
     inputType={{inputType}}
     label="Repeat password"

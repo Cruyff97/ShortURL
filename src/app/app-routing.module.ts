@@ -9,6 +9,7 @@ import { MyUrlsComponent } from './my-urls/my-urls.component';
 import { 
   AuthGuardService as AuthGuard 
 } from './auth/auth-services/auth-guard.service';
+import { FirstLoginComponent } from './first-login/first-login.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent, canActivate:[AuthGuard] },
   { path: 'myUrls', component: MyUrlsComponent,},
   {path: 'map', component: MapComponent},
+  // slug path must be the last
   { path: ':slug', component: UrlsComponent },
 ];
 

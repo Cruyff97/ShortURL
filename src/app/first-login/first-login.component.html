@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()" class="form" [formGroup]="firstLoginForm" action="">
+    <h2 class="enter-information">
+        Enter your informations
+    </h2>
+    <app-input
+      inputType="text"
+      label="First Name"
+      [control]="$any(firstLoginForm).get('first_name')"
+    ></app-input>
+    <app-input
+      inputType="text"
+      label="Last Name"
+      [control]="$any(firstLoginForm).get('last_name')"
+    ></app-input>
+    <button mat-raised-button class="btn-align-custom">Send</button>
+    </form>
