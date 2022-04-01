@@ -8,12 +8,12 @@
   width: 100vw;
   height: 100vh;
   display: none;
-  background-color: #2eb086;
+  background-color: #11d596;
 }
 #change-opacity-bg {
   width: 817px;
   height: 200vh;
-  background-color: #2eb086;
+  background-color: #11d596;
   opacity: 0.4;
   display: block;
   margin-left: -63px;
@@ -35,7 +35,7 @@
 .bar {
   height: 5px;
   width: 100%;
-  background-color: #2eb086;
+  background-color: #11d596;
   display: block;
   border-radius: 5px;
   transition: 0.3s ease;
@@ -105,7 +105,7 @@
     rgba(106, 189, 163, 1) 35%,
     rgba(46, 176, 134, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#42fcc1",endColorstr="#2eb086",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#42fcc1",endColorstr="#11d596",GradientType=1);
 
   border-radius: 50%;
   transition: 0.3s ease;
@@ -133,14 +133,14 @@
 }
 .menu {
   border-radius: 5px;
-  background-color: #2eb086;
+  background-color: #11d596;
 }
 a {
   color: aliceblue;
 }
 .logo {
   font-family: Righteous;
-  color: #2eb086;
+  color: #11d596;
 }
 
 /* 
@@ -204,7 +204,7 @@ new */
   text-decoration: none;
   font-size: 30px;
   font-weight: 500;
-  color: #2eb086;
+  color: #11d596;
   position: relative;
   line-height: 50px;
   transition: all 0.3s ease;

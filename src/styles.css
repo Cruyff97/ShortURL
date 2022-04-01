@@ -57,7 +57,7 @@ body {
 }
 
 .marker-major{
-  background-color: #2eb086;
+  background-color: #11d596;
 }
 
 .marker-minor{
@@ -68,12 +68,12 @@ body {
 .where-title{
   font-size: 15px;
   font-weight: bold;
-  color: #2eb086;
+  color: #11d596;
 }
 .clicks-num{
   font-size: 11px;
   font-weight: bold;
-  color: #2eb086;
+  color: #11d596;
 }
 
 
@@ -108,4 +108,8 @@ body {
   width: 10px;
   height: 10px;
   margin-right: 5px;
+}
+
+.btn-align-custom{
+  width: 280px;
 }

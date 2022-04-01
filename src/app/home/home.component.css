@@ -30,7 +30,7 @@ mat-card {
 }
 .insert {
   margin-bottom: 10px;
-  color: #2eb086;
+  color: #11d596;
   font-weight: bolder;
   font-size: 1.2em;
 }
@@ -48,7 +48,7 @@ mat-card {
 }
 @media screen and (max-width: 768px) {
   .title {
-    margin-top: 20px;
+    margin-top: 70px;
   }
   .gen-link{
     display: block;
@@ -82,7 +82,7 @@ mat-card {
 
  .circle {
      fill-opacity: 0;
-     stroke: #2eb086;
+     stroke: #11d596;
      stroke-width: 16px;
      transform-origin: center;
      transform: scale(0);
@@ -100,7 +100,7 @@ mat-card {
      transform: scale(.9);
      stroke-width: 8px;
      fill-opacity: 1;
-     fill: #2eb086;
+     fill: #11d596;
  }
 }
 

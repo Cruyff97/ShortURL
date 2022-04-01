@@ -6,6 +6,7 @@
 :host {
   display: block;
   margin-bottom: 1em;
+  margin-top: 140px;
 }
 .basic.label {
   margin-bottom: 0.5em;
@@ -29,5 +30,32 @@ button {
   margin-bottom: 30px;
 }
 .created{
-    color: #2eb086;
+    color: #11d596;
 }
+@media screen and (max-width: 768px) {
+  .card {
+    margin: auto 7vw;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .card {
+      margin: auto 30vw;
+      }
+    }
+
+    .to-sign-in{
+      margin-bottom: 15px;
+    }
+    .google-login-btn{
+      margin-bottom: 15px;
+    }
+    .button-redirect-signin{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .already-account{
+      text-align: center;
+      margin-top: 55px;
+    }

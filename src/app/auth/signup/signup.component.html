@@ -1,18 +1,14 @@
 <div class="container-title">
   <h1 class="register-title title">Create an Account</h1>
-  <div class="is-flex is-justify-content-center">
-    <span *ngIf="" class="switch to-sign-in" tabindex="8">
-      <span>Already have an account? </span>
-      <a href="">Sign In</a>
-    </span>
-  </div>
 </div>
+
+<div class="card">
+  <div class="card-content">
 <div class="is-flex is-align-content-center is-justify-content-center">
   <button
     (click)="loginWithGoogle()"
     mat-raised-button
-    color="accent"
-    class="google-login-btn"
+    class="google-login-btn btn-align-custom"
   >
     <img
       width="20"
@@ -30,22 +26,22 @@
 <form (ngSubmit)="onSubmit()" class="form" [formGroup]="authForm" action="">
   <app-input
     inputType="text"
-    label="e-mail"
+    label="Your e-mail"
     [control]="$any(authForm).get('username')"
   ></app-input>
   <app-input
     inputType="text"
-    label="e-mail Confirmation"
+    label="Repeat e-mail"
     [control]="$any(authForm).get('conf_username')"
   ></app-input>
   <app-input
     inputType="password"
-    label="password"
+    label="Enter yout password"
     [control]="$any(authForm).get('password')"
   ></app-input>
   <app-input
     inputType={{inputType}}
-    label="password Confirmation"
+    label="Repeat password"
     [control]="$any(authForm).get('conf_password')"
   >
 </app-input>
@@ -70,6 +66,16 @@
     <mat-error> Username and usernameConfirmation must match </mat-error>
   </div>
   <div>
-    <button type="submit" mat-raised-button>submit</button>
+    <button class="btn-align-custom" type="submit" mat-raised-button color="accent">Create an Account</button>
+  </div>
+  <div class="is-flex is-justify-content-center already-account">
+    <span class="switch to-sign-in" tabindex="8">
+      <span> Do you already have an account? </span>
+      <div class="button-redirect-signin">
+        <button class="btn-align-custom" mat-raised-button>Sign In</button>
+      </div>
+    </span>
   </div>
 </form>
+  </div>
+</div>
