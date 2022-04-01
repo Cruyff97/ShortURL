@@ -31,8 +31,6 @@ export class MyUrlsComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
-  
-    
     this.authService.myUrls.subscribe((res) => {
       this.myUrls = res.data;
       this.urles = res.data.urls;
