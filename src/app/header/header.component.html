@@ -66,17 +66,17 @@
           <ul>
             <li (click)="onMenuItemClick()">
               <a routerLink="home" routerLinkActive="router-link-active">
-                Home
+                HOME
               </a>
             </li>
             <li (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
               <a routerLink="signup" routerLinkActive="router-link-active">
-                Sign Up
+                SIGN UP
               </a>
             </li>
             <li (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
               <a routerLink="signin" routerLinkActive="router-link-active">
-                Sign In
+                SIGN IN
               </a>
             </li>
             <li (click)="onMenuItemClick()" *ngIf="signedin" color="primary">
