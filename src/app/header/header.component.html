@@ -17,34 +17,6 @@
     <span class="example-spacer"></span>
     <div class="menu">
       <div class="is-hidden-desktop is-hidden-tablet" id="menu">
-        <!-- <div id="menu-bar" (click)="menuOnClick()">
-          <div id="bar1" class="bar"></div>
-          <div id="bar2" class="bar"></div>
-          <div id="bar3" class="bar"></div>
-        </div>
-        <nav class="nav" id="nav">
-          <ul>
-            <a (click)="menuOnClick()" routerLink="home" routerLinkActive="router-link-active" >
-              <li>
-                Home
-             </li>
-           </a>
-            <a (click)="menuOnClick()" *ngIf="signedin" color="primary">
-              <li [routerLink]="['myUrls']" routerLinkActive="router-link-active" >myURLs</li>
-             </a>
-             <a (click)="menuOnClick()" *ngIf="!signedin" color="primary">
-               <li routerLink="./signup">Sign Up</li>
-              </a>
-              <a (click)="menuOnClick()" routerLink="signin" routerLinkActive="router-link-active" >
-                <li *ngIf="!signedin" >
-                  Login
-               </li>
-             </a>
-              <li (click)="onSignOut()" *ngIf="signedin">
-                Sign Out
-              </li>
-          </ul>
-        </nav>  -->
         <input
           (click)="onWrapper()"
           type="checkbox"
@@ -87,6 +59,11 @@
                 My URLs
               </a>
             </li>
+            <li *ngIf="signedin" class="header-li" (click)="onMenuItemClick()">
+              <a routerLink="home" routerLinkActive="router-link-active">
+               <mat-icon>account_circle</mat-icon>
+              </a>
+            </li>
             <li class="header-li">
               <a (click)="onSignOut()" *ngIf="signedin"> Sign Out </a>
             </li>
@@ -95,21 +72,25 @@
       </div>
 
       <div class="menu-bg" id="menu-bg"></div>
-      <div class="is-hidden-mobile menu-desktop">
-        <button mat-button>
-          <a class="header-li" [routerLink]="['home']" routerLinkActive="router-link-active"
-            >Home</a
-          >
-        </button>
 
+      <!-- menu pc -->
+
+      <div class="is-hidden-mobile menu-desktop">
+        <a class="header-li" [routerLink]="['home']" routerLinkActive="router-link-active">
+        <button mat-button>
+          Home
+          </button>
+        </a>
+        <a class="header-li" [routerLink]="['myUrls']" routerLinkActive="router-link-active">
         <button *ngIf="signedin" mat-button>
-          <a class="header-li" [routerLink]="['myUrls']" routerLinkActive="router-link-active"
-            >myURLs</a
-          >
+          myURLs
         </button>
-        <button *ngIf="!signedin" mat-button color="primary">
-          <a class="header-li" routerLink="./signup">Sign Up</a>
+      </a>
+      <a class="header-li" routerLink="./signup">
+        <button *ngIf="!signedin" mat-button>
+        Sign Up
         </button>
+      </a>
         <a class="header-li" routerLink="signin" routerLinkActive="router-link-active">
           <button *ngIf="!signedin" mat-button>Login</button>
         </a>

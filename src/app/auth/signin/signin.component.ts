@@ -41,6 +41,7 @@ export class SigninComponent implements OnInit {
         this.spinner.show();
         
         localStorage.setItem('id_token', res.data.user.jwt);
+        localStorage.setItem('username', res.data.user.username);
       },
       error: (err) => {
         if (err.status == 404) {

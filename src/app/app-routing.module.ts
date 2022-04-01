@@ -25,7 +25,6 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuard]  },
   { path: 'signin', component: SigninComponent, canActivate:[AuthGuard] },
   { path: 'myUrls', component: MyUrlsComponent,},
-  {path: 'map', component: MapComponent},
   // slug path must be the last
   { path: ':slug', component: UrlsComponent },
 ];

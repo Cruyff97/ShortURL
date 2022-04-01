@@ -48,6 +48,7 @@ validateJwt() {
 
   logout() {
     localStorage.removeItem('id_token');
+    localStorage.removeItem('username');
     return this.signedin$.next(false);
   }
   login(credentials: any) {
@@ -64,7 +65,9 @@ validateJwt() {
         })
       );
   }
-
+get username(){
+  return localStorage.getItem('username');
+}
   get myUrls() {
 
     return this.http.get<IMyUrls>(`${this.rootUrl}/api/user/urls`);

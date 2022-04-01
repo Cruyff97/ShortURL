@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   active_wrap = false;
   disactive_wrap = true;
   collapse = false;
+  username:any;
   @Input() signedin = false;
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -19,6 +20,9 @@ export class HeaderComponent implements OnInit {
       this.signedin = signedin;
     });
     this.signedin= this.authService.loggedIn();
+    
+    this.username=this.authService.username
+    console.log(this.username);
   }
   onWrapper() {
     this.active_wrap = !this.active_wrap;
