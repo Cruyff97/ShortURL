@@ -16,7 +16,7 @@ export class MyUrlsComponent implements OnInit {
   total_clicks: number = 0;
   top_location: number = 0;
   modal: boolean = false;
-  modal_deleting: boolean= false;
+  modal_deleting: boolean = false;
   urles: any;
   total_urls!: number;
   total_clicks_single!: number;
@@ -36,18 +36,27 @@ export class MyUrlsComponent implements OnInit {
       this.total_urls = this.urles.length;
       this.urles.map((url: any) => {
         this.total_clicks_single = 0;
-        this.shortService.getURLInfos(url._id).subscribe((clicks: any) => {
-          if (clicks.data.length > 0) {
-            clicks.data.map((v: any) => (this.total_clicks += v.count));
-          }
+        this.shortService.getURLInfos(url._id).subscribe({
+          next: (clicks: any) => {
+            if (clicks.data.length > 0) {
+              clicks.data.map((v: any) => (this.total_clicks += v.count));
+            }
+          },
+          error: (err: any) => {
+           this.spinner.hide();
+          },
+          complete: () => {
+            this.spinner.hide();
+          },
         });
-      });
 
-      this.spinner.hide();
+        this.spinner.hide();
+      });
     });
   }
+
   copy(slug: any) {
-    return `shortangular.netlify.app/${slug}`
+    return `shortangular.netlify.app/${slug}`;
   }
 
   openInfosModal(id: any) {
@@ -70,36 +79,36 @@ export class MyUrlsComponent implements OnInit {
   closeInfosModal() {
     this.modal = !this.modal;
   }
-  openDeleteModal(index:any){
+  openDeleteModal(index: any) {
     this.actual_index = index;
     console.log(index);
     this.modal_deleting = !this.modal_deleting;
   }
-  closeDeleteModal(){
+  closeDeleteModal() {
     this.modal_deleting = !this.modal_deleting;
   }
   deleteUrl(index: any) {
-  console.log("index",index);
-  
+    console.log('index', index);
+
     this.spinner.show();
     let url_id = this.myUrls.urls[index]._id;
     this.shortService.deleteUrl(url_id).subscribe((res) => {
       console.log(res);
-      
+
       this.authService.myUrls.subscribe((res) => {
         this.myUrls = res.data;
         this.urles = res.data.urls;
         this.total_urls = this.urles.length;
         this.urles.map((url: any) => {
           this.total_clicks_single = 0;
-          this.total_clicks=0
+          this.total_clicks = 0;
           this.shortService.getURLInfos(url._id).subscribe((clicks: any) => {
             if (clicks.data.length > 0) {
               clicks.data.map((v: any) => (this.total_clicks += v.count));
             }
           });
         });
-  
+
         this.spinner.hide();
         this.modal_deleting = !this.modal_deleting;
       });

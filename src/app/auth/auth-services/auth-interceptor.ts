@@ -1,3 +1,4 @@
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Observable, of } from 'rxjs';
@@ -13,7 +14,7 @@ import {
 import { catchError, tap } from 'rxjs/operators';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private spinner: NgxSpinnerModule) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
