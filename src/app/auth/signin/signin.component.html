@@ -10,7 +10,7 @@
     <div class="card-content">
   <form (ngSubmit)="onLogin()" class="form" [formGroup]="loginForm" action="">
     <app-input
-      inputType="text"
+      inputType="email"
       label="E-mail"
       [control]="$any(loginForm).get('username')"
     ></app-input>

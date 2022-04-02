@@ -24,21 +24,21 @@
 
   <!-- error handling -->
   <div
-    class="is-flex has-text-centered is-justify-content-center ui pointing red basic label"
+    class="is-flex has-text-centered is-flex-direction-column	 is-justify-content-center ui pointing red basic label"
     *ngIf="showErrors()"
   >
-    <mat-error *ngIf="control.errors!['required']">required</mat-error>
-    <mat-error *ngIf="control.errors!['minlength']">
-      value you entered is
+    <mat-error class="mb-2" *ngIf="control.errors!['required']">required</mat-error>
+    <mat-error class="mb-2" *ngIf="control.errors!['minlength']">
+      Value you entered is
       {{ control.errors!["minlength"]["actualLength"] }} characthers long, but
       it must be at least {{ control.errors!["minlength"]["requiredLength"] }}
     </mat-error>
-    <mat-error *ngIf="control.errors!['maxlength']">
-      value you entered is
+    <mat-error class="mb-2" *ngIf="control.errors!['maxlength']">
+      Value you entered is
       {{ control.errors!["maxlength"]["actualLength"] }} characthers long, but
       it cannot be longer than
       {{ control.errors!["maxlength"]["requiredLength"] }} characthers
     </mat-error>
-    <mat-error *ngIf="control.errors!['pattern']">Invalid Format</mat-error>
+      <mat-error class="mb-2" *ngIf="control.errors!['pattern'] ">Invalid Format</mat-error>
   </div>
 </div>
