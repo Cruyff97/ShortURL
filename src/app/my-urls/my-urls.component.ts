@@ -40,6 +40,7 @@ export class MyUrlsComponent implements OnInit {
           next: (clicks: any) => {
             if (clicks.data.length > 0) {
               clicks.data.map((v: any) => (this.total_clicks += v.count));
+              this.spinner.hide();
             }
           },
           error: (err: any) => {

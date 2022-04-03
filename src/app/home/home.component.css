@@ -26,7 +26,6 @@ mat-card {
 }
 .main {
   align-items: center;
-  margin-top: 15px;
 }
 .insert {
   margin-bottom: 10px;
@@ -59,6 +58,9 @@ mat-card {
   align-items: center;
 }
 @media screen and (min-width: 768px) {
+  .main{
+    margin-top: 142px;
+  }
   .gen-link{
     display: flex;
     align-items: center;
