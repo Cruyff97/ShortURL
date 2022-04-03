@@ -13,25 +13,49 @@ export class HomeComponent implements OnInit {
   insertedURL!: string;
   genSlug!: string;
   urlBase: string = 'https://croppy.herokuapp.com';
-  token = localStorage.getItem('id_token');
   link: string = '';
-  copy:string='Copy';
+  copy: string = 'Copy';
+  customSlug?: string;
+  isSavedCustomSlug: boolean = false;
+  error?: string;
   constructor(
     private shortservice: ShortService,
     private authService: AuthService,
-    private spinner: NgxSpinnerService,
+    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
-        this.signedin = this.authService.loggedIn();
+    this.signedin = this.authService.loggedIn();
   }
-  onInsertedURLlogged(URL: string, jwt: any) {
+  onInsertedURLlogged(URL: string, customSlug?: string) {
     this.spinner.show();
-    this.shortservice.shortLogged(URL, jwt).subscribe((results) => {
-      this.genSlug = `${results.data.generated_slug}`;
-      this.link = `shortangular.netlify.app/${this.genSlug}`;
-      this.spinner.hide();
-    });
+    if (customSlug !== undefined) {
+      this.shortservice.shortLogged(URL, customSlug).subscribe(
+        (results) => {
+          this.error=undefined
+          this.genSlug = `${results.data.generated_slug}`;
+          this.link = `shortangular.netlify.app/${this.genSlug}`;
+          this.spinner.hide();
+        },
+        (error) => {
+          this.error = error;
+          this.spinner.hide();
+        }
+      );
+    } else {
+      this.shortservice.shortLogged(URL).subscribe(
+        (results) => {
+this.error=undefined
+          this.genSlug = `${results.data.generated_slug}`;
+          this.link = `shortangular.netlify.app/${this.genSlug}`;
+          this.spinner.hide();
+        },
+        (error) => {
+          this.error = error;
+          this.spinner.hide();
+        }
+      );
+    }
   }
   onInsertedURL(URL: string) {
     console.log('notlogged');
@@ -45,8 +69,12 @@ export class HomeComponent implements OnInit {
   copied() {
     this.copy = 'Copied!';
     setTimeout(() => {
-      this.copy='Copy'  
-      }, 1000);
-  
+      this.copy = 'Copy';
+    }, 1000);
+  }
+
+  saveCustomSlug(customSlug: string | undefined) {
+    this.isSavedCustomSlug = !this.isSavedCustomSlug;
+    this.customSlug = customSlug;
   }
 }

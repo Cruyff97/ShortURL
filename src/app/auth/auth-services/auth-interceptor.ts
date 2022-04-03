@@ -1,3 +1,4 @@
+import { throwError } from 'rxjs/internal/observable/throwError';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
@@ -33,10 +34,17 @@ export class AuthInterceptor implements HttpInterceptor {
         }),
         catchError((err: any) => {
           if (err instanceof HttpErrorResponse) {
+            console.log(err);
             try {
-              if (err.status === 403) {
-                this.authService.logout();
+              switch (err.status) {
+                case 403:
+                  this.authService.logout();
                 this.router.navigate(['/signin']);
+                break;
+                default:
+                  let error= err.error.message
+                  return throwError(() => error)
+                  
               }
             } catch (e) {
              console.log(e);

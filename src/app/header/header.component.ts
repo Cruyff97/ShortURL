@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   collapse = false;
   username:any;
   @Input() signedin = false;
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, public router: Router) {}
 
   ngOnInit(): void {
     this.authService.signedin$.subscribe((signedin: any) => {

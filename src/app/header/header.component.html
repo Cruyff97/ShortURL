@@ -15,6 +15,10 @@
       </h3>
     </button>
     <span class="example-spacer"></span>
+    <!-- IMPLEMENT SEARCH-BAR FOR SEARCHING BY TITLE -->
+     <!-- <div class="is-hidden-mobile search-bar">
+      <app-search-bar *ngIf="router.url === '/myUrls'"></app-search-bar>
+    </div> --> 
     <div class="menu">
       <div class="is-hidden-desktop is-hidden-tablet" id="menu">
         <input
@@ -71,9 +75,10 @@
         </div>
       </div>
 
+      <!-- menu pc -->
+
       <div class="menu-bg" id="menu-bg"></div>
 
-      <!-- menu pc -->
 
       <div class="is-hidden-mobile menu-desktop">
         <a class="header-li" [routerLink]="['home']" routerLinkActive="router-link-active">

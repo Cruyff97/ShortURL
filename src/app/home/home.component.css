@@ -45,6 +45,10 @@ mat-card {
 .columns {
   margin-right: 0;
 }
+
+.expected-title{
+  margin-right: 10px;
+}
 @media screen and (max-width: 768px) {
   .title {
     margin-top: 70px;

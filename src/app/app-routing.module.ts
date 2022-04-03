@@ -22,6 +22,7 @@ const routes: Routes = [
     pathMatch: 'full',
     data: { animation: 'togglePage' },
   },
+  // { path: 'firstlogin', component: FirstLoginComponent,}, //not ready backend part
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuard]  },
   { path: 'signin', component: SigninComponent, canActivate:[AuthGuard] },
   { path: 'myUrls', component: MyUrlsComponent,},

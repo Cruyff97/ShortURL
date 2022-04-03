@@ -1,0 +1,17 @@
+.search-btn {
+    position: absolute;
+    top: 3px;
+    right: -12px;
+  }
+
+.search-form-field .mat-form-field-wrapper {
+padding-bottom: 0px;
+}
+.search-form-field .mat-form-field-infix {
+    padding: 0;
+    border-top:none;
+}
+
+.search-form-field .mat-form-field{
+    display: block;
+}

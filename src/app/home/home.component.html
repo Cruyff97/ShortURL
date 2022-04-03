@@ -10,14 +10,27 @@
       <h2 class="title" color="primary">Life is too short, for long URLs...</h2>
     </div>
     <mat-card>
-      <p class="insert">Insert a long URL</p>
+      <p class="insert" *ngIf="!signedin">Insert a long URL</p>
+      <p class="insert" *ngIf="signedin">Insert a long URL and customize it if you want!</p>
       <div class="search">
+        <p *ngIf="signedin">Edit slug</p>
+        <div *ngIf="signedin" class="is-flex is-align-items-center">
+          <mat-form-field *ngIf="signedin">
+            <input matInput type="text" [(ngModel)]="customSlug" placeholder="title" name="" id="" />
+          </mat-form-field>
+          <button mat-button (click)="saveCustomSlug(customSlug)">Save</button>
+          </div>
+          <div *ngIf="isSavedCustomSlug">
+            <p class="expected-title">expected Url</p>
+            <p class="expected-url accent-color">
+              shortangular.netlify.app/{{customSlug}}
+            </p>
+          </div>
         <mat-form-field class="example-full-width link-input" appearance="fill">
           <mat-label>URL</mat-label>
           <input
             [(ngModel)]="insertedURL"
             matInput
-            placeholder="URL"
             value=""
           />
           <button
@@ -25,22 +38,17 @@
             class="button shorten-btn"
             (click)="
               this.signedin
-                ? onInsertedURLlogged(insertedURL, token)
+                ? onInsertedURLlogged(insertedURL, customSlug!)
                 : onInsertedURL(insertedURL)
             "
             mat-raised-button
           >
             Shorten
           </button>
+
         </mat-form-field>
+       <mat-error *ngIf="error">{{error}}</mat-error>
         <div *ngIf="genSlug" class="res">
-          <div>
-            <p>Edit link</p>
-            <mat-form-field *ngIf="signedin">
-              <input matInput type="text" placeholder="title" name="" id="" />
-            </mat-form-field>
-            <button mat-button>Save</button>
-          </div>
           <div *ngIf="genSlug" class="gen-link">
             <div class="slug">
               <svg

@@ -7,15 +7,20 @@ import { Slug } from '../slug';
 export class ShortService {
   baseURL = 'https://croppy.herokuapp.com';
   constructor(private http: HttpClient) {}
-  shortLogged(insertedLink: string, jwt: string) {
-    var header = {
-      headers: new HttpHeaders().set('Authorization', `Bearer ${jwt}`),
-    };
+  shortLogged(insertedLink: string, customSlug?: string) {
+    if(customSlug !== undefined){
     return this.http.post<Slug>(
       `${this.baseURL}/v1/short-url`,
-      { target: `${insertedLink}` },
-      header
-    );
+      { target: `${insertedLink}`, slug : `${customSlug }` },
+
+    )
+    ;}else{
+      return this.http.post<Slug>(
+        `${this.baseURL}/v1/short-url`,
+        { target: `${insertedLink}` },
+
+      );
+    }
   }
   shortNotLogged(insertedLink: any) {
     return this.http.post<Slug>(`${this.baseURL}/v1/short-url`, {
