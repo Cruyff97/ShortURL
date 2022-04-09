@@ -1,8 +1,8 @@
 import { throwError } from 'rxjs/internal/observable/throwError';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import {
   HttpEvent,
@@ -15,7 +15,7 @@ import {
 import { catchError, tap } from 'rxjs/operators';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService, private router: Router, private spinner: NgxSpinnerModule) {}
+  constructor(private authService: AuthService, private router: Router, private spinner: NgxSpinnerService) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
@@ -27,9 +27,11 @@ export class AuthInterceptor implements HttpInterceptor {
           Authorization: `Bearer ${token}`,
         },
       });
+      this.spinner.show();
       return next.handle(myRequest).pipe(
         tap((event) => {
           if (event instanceof HttpResponse) {
+            this.spinner.hide();
           }
         }),
         catchError((err: any) => {
@@ -38,15 +40,18 @@ export class AuthInterceptor implements HttpInterceptor {
             try {
               switch (err.status) {
                 case 403:
+                  this.spinner.hide();
                   this.authService.logout();
                 this.router.navigate(['/signin']);
                 break;
                 default:
+                  this.spinner.hide();
                   let error= err.error.message
                   return throwError(() => error)
                   
               }
             } catch (e) {
+              this.spinner.hide();
              console.log(e);
              
             }

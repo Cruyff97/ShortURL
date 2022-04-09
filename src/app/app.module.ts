@@ -30,6 +30,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { MyUrlsOverviewComponent } from './my-urls-overview/my-urls-overview.component';
 import { FirstLoginComponent } from './first-login/first-login.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { LoadingInterceptor } from './loading-interceptor/loading-interceptor';
 
 export function tokenGetter() {
   return localStorage.getItem("id_token");
@@ -75,6 +76,8 @@ export function tokenGetter() {
       } as SocialAuthServiceConfig,
     },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    LoadingInterceptor,
+    { provide: HTTP_INTERCEPTORS, useClass:LoadingInterceptor , multi: true },
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
