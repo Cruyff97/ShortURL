@@ -11,6 +11,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatRippleModule} from '@angular/material/core';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatRippleModule
   ],
   exports: [
     MatToolbarModule,
@@ -31,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTooltipModule,
     MatIconModule,
     MatDialogModule,
+    MatRippleModule
   ],
 })
 export class MaterialModule {}

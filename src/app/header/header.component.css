@@ -143,6 +143,9 @@ a {
   font-size: 23px;
   color: #11d596;
 }
+.logo:active {
+  background-color: transparent
+}
 
 /* 
 new */
