@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Spartan:wght@700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Spartan:wght@700&family=Righteous&family=Rubik&display=swap");
 
-html,
 body {
   height: 100%;
 }
@@ -10,6 +9,9 @@ body {
   margin: 0;
   font-family: Righteous;
   background-color:whitesmoke;
+}
+p{
+  font-family: Rubik;
 }
 h1 {
   font-size: x-large;
