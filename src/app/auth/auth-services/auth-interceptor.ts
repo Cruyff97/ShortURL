@@ -15,7 +15,11 @@ import {
 import { catchError, tap } from 'rxjs/operators';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService, private router: Router, private spinner: NgxSpinnerService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
@@ -36,24 +40,20 @@ export class AuthInterceptor implements HttpInterceptor {
         }),
         catchError((err: any) => {
           if (err instanceof HttpErrorResponse) {
-            console.log(err);
             try {
               switch (err.status) {
                 case 403:
                   this.spinner.hide();
                   this.authService.logout();
-                this.router.navigate(['/signin']);
-                break;
+                  this.router.navigate(['/signin']);
+                  break;
                 default:
                   this.spinner.hide();
-                  let error= err.error.message
-                  return throwError(() => error)
-                  
+                  let error = err.error.message;
+                  return throwError(() => error);
               }
             } catch (e) {
               this.spinner.hide();
-             console.log(e);
-             
             }
           }
           return of(err);

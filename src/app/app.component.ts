@@ -11,6 +11,7 @@ import { slideInAnimation } from './animations/animations';
   ]
 })
 export class AppComponent {
+  title= 'short'
   constructor(private contexts: ChildrenOutletContexts) {    
   }
   signedin: any;

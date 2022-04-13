@@ -69,8 +69,6 @@ export class SignupComponent implements OnInit {
       next: (res: any) => {
         this.openDialog(ErrorModal, {data: { created: 'Account created'}});},
       error: (err: any) => {
-        console.log(err);
-        
         this.errors = err.error;
         this.openDialog(ErrorModal, {
           data: {
@@ -108,8 +106,6 @@ dialogcreated?:any;
       else{
         this.one_error=true
       }
-    console.log("dialogtitle",this.dialogTitle);
-    
     }
     if(this.data.created){
     this.data= this.data.created;

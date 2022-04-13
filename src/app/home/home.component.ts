@@ -58,8 +58,6 @@ this.error=undefined
     }
   }
   onInsertedURL(URL: string) {
-    console.log('notlogged');
-
     this.shortservice.shortNotLogged(URL).subscribe((results) => {
       this.genSlug = `${results.data.generated_slug}`;
       this.link = `shortangular.netlify.app/${this.genSlug}`;

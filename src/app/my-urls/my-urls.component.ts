@@ -44,7 +44,7 @@ export class MyUrlsComponent implements OnInit {
             }
           },
           error: (err: any) => {
-           this.spinner.hide();
+            this.spinner.hide();
           },
           complete: () => {
             this.spinner.hide();
@@ -63,9 +63,6 @@ export class MyUrlsComponent implements OnInit {
   openInfosModal(id: any) {
     this.total_clicks_single = 0;
     this.click_from = '';
-
-    console.log(id);
-    console.log(this.myUrls.urls[id]);
     this.id = this.myUrls.urls[id]._id;
     this.shortService.getURLInfos(this.id).subscribe((infos) => {
       this.click_from = infos.data;
@@ -82,20 +79,15 @@ export class MyUrlsComponent implements OnInit {
   }
   openDeleteModal(index: any) {
     this.actual_index = index;
-    console.log(index);
     this.modal_deleting = !this.modal_deleting;
   }
   closeDeleteModal() {
     this.modal_deleting = !this.modal_deleting;
   }
   deleteUrl(index: any) {
-    console.log('index', index);
-
     this.spinner.show();
     let url_id = this.myUrls.urls[index]._id;
     this.shortService.deleteUrl(url_id).subscribe((res) => {
-      console.log(res);
-
       this.authService.myUrls.subscribe((res) => {
         this.myUrls = res.data;
         this.urles = res.data.urls;

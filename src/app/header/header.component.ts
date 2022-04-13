@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
     this.signedin= this.authService.loggedIn();
     
     this.username=this.authService.username
-    console.log(this.username);
   }
   onWrapper() {
     this.active_wrap = !this.active_wrap;

@@ -11,14 +11,11 @@ isLoading: boolean=false;
   intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpEvent<any>> {
 this.isLoading=true;
-console.log(this.isLoading);
-
     return next.
         handle(req)
         .pipe(
             finalize(() => {
-                this.isLoading=false;
-                console.log('Intercepted request ...',this.isLoading);
+                this.isLoading=false;    
             }
         )
     );
