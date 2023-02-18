@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class InputComponent implements OnInit {
   @Input() inputType!: string;
   @Input() label!: string;
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
   hide=true
   constructor() {}
 

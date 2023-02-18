@@ -1,7 +1,7 @@
 import { LoadingInterceptor } from './../../loading-interceptor/loading-interceptor';
 import { AuthService } from './../auth-services/auth.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
@@ -15,13 +15,13 @@ export class SigninComponent implements OnInit {
   logged: boolean = false;
   jwt?: string;
   error: any;
-  loginForm = new FormGroup({
-    username: new FormControl('', [
+  loginForm = new UntypedFormGroup({
+    username: new UntypedFormControl('', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(45),
     Validators.email    ]),
-    password: new FormControl('', [
+    password: new UntypedFormControl('', [
       Validators.required,
       Validators.minLength(8),
       Validators.maxLength(30),

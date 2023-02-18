@@ -1,7 +1,11 @@
-import { AuthService } from './../auth/auth-services/auth.service';
-import { ShortService } from './../services/short.service';
-import { Component, OnInit } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
+import { NgxSpinnerService } from 'ngx-spinner'
+import { switchMap } from 'rxjs'
+
+import { Component, OnInit } from '@angular/core'
+
+import { AuthService } from '../auth/auth-services/auth.service'
+import { ConfigurationService } from '../services/configuration.service'
+import { ShortService } from '../services/short.service'
 
 @Component({
   selector: 'app-home',
@@ -12,17 +16,21 @@ export class HomeComponent implements OnInit {
   signedin = false;
   insertedURL!: string;
   genSlug!: string;
-  urlBase: string = 'https://croppy.herokuapp.com';
   link: string = '';
   copy: string = 'Copy';
   customSlug?: string;
   isSavedCustomSlug: boolean = false;
   error?: string;
+host?:string
+backend?:string
   constructor(
     private shortservice: ShortService,
     private authService: AuthService,
-    private spinner: NgxSpinnerService
-  ) {}
+    private spinner: NgxSpinnerService,
+    private configurationService: ConfigurationService) {
+ this.host= this.configurationService.getHost()
+ this.backend=this.configurationService.getBackendUrl()
+    }
 
   ngOnInit(): void {
     this.signedin = this.authService.loggedIn();
@@ -34,7 +42,7 @@ export class HomeComponent implements OnInit {
         (results) => {
           this.error=undefined
           this.genSlug = `${results.data.generated_slug}`;
-          this.link = `shortangular.netlify.app/${this.genSlug}`;
+          this.link = `${this.host}/${this.genSlug}`;
           this.spinner.hide();
         },
         (error) => {
@@ -47,7 +55,7 @@ export class HomeComponent implements OnInit {
         (results) => {
 this.error=undefined
           this.genSlug = `${results.data.generated_slug}`;
-          this.link = `shortangular.netlify.app/${this.genSlug}`;
+          this.link = `${this.host}/${this.genSlug}`;
           this.spinner.hide();
         },
         (error) => {
@@ -62,6 +70,10 @@ this.error=undefined
       this.genSlug = `${results.data.generated_slug}`;
       this.link = `shortangular.netlify.app/${this.genSlug}`;
     });
+  }
+
+  goToUrl(url: string): void {
+    window.location.href = url;
   }
 
   copied() {

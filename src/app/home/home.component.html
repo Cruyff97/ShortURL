@@ -11,28 +11,33 @@
     </div>
     <mat-card>
       <p class="insert" *ngIf="!signedin">Insert a long URL</p>
-      <p class="insert" *ngIf="signedin">Insert a long URL and customize it if you want!</p>
+      <p class="insert" *ngIf="signedin">
+        Insert a long URL and customize it if you want!
+      </p>
       <div class="search">
         <p *ngIf="signedin">Edit slug</p>
         <div *ngIf="signedin" class="is-flex is-align-items-center">
           <mat-form-field *ngIf="signedin">
-            <input matInput type="text" [(ngModel)]="customSlug" placeholder="title" name="" id="" />
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="customSlug"
+              placeholder="title"
+              name=""
+              id=""
+            />
           </mat-form-field>
           <button mat-button (click)="saveCustomSlug(customSlug)">Save</button>
-          </div>
-          <div *ngIf="isSavedCustomSlug">
-            <p class="expected-title">expected Url</p>
-            <p class="expected-url accent-color">
-              shortangular.netlify.app/{{customSlug}}
-            </p>
-          </div>
+        </div>
+        <div *ngIf="isSavedCustomSlug">
+          <p class="expected-title">expected Url</p>
+          <p class="expected-url accent-color">
+            shortangular.netlify.app/{{ customSlug }}
+          </p>
+        </div>
         <mat-form-field class="example-full-width link-input" appearance="fill">
           <mat-label>URL</mat-label>
-          <input
-            [(ngModel)]="insertedURL"
-            matInput
-            value=""
-          />
+          <input [(ngModel)]="insertedURL" matInput value="" />
           <button
             color="accent"
             class="button shorten-btn"
@@ -45,11 +50,10 @@
           >
             Shorten
           </button>
-
         </mat-form-field>
-       <mat-error *ngIf="error">{{error}}</mat-error>
+        <mat-error *ngIf="error">{{ error }}</mat-error>
         <div *ngIf="genSlug" class="res">
-          <div *ngIf="genSlug" class="gen-link">
+          <div class="gen-link">
             <div class="slug">
               <svg
                 class="ft-green-tick"
@@ -75,8 +79,8 @@
                 target="_blank"
                 [routerLink]="['../', genSlug]"
                 routerLinkActive="router-link-active"
-                >shortangular.netlify.app/{{ genSlug }}</a
-              >
+                >shortangular.netlify.app/{{ genSlug }}
+              </a>
             </div>
             <div class="copy-btn-div">
               <button

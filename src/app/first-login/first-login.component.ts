@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-first-login',
@@ -7,10 +7,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./first-login.component.css']
 })
 export class FirstLoginComponent implements OnInit {
-  firstLoginForm = new FormGroup(
+  firstLoginForm = new UntypedFormGroup(
     {
-      first_name: new FormControl('', [Validators.required,Validators.minLength(2)]),
-      last_name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      first_name: new UntypedFormControl('', [Validators.required,Validators.minLength(2)]),
+      last_name: new UntypedFormControl('', [Validators.required, Validators.minLength(2)]),
 
 });
   constructor() { }

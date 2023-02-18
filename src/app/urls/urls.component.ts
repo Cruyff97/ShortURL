@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http'
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+
+import { ConfigurationService } from '../services/configuration.service'
 
 @Component({
   selector: 'app-urls',
@@ -11,14 +13,17 @@ export class UrlsComponent implements OnInit {
   redirectUrl!: string;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private configurationService:ConfigurationService
   ) {}
 
+  backendUrl= this.configurationService.getBackendUrl()
+  host=this.configurationService.getHost()
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const slug = params['slug'];
       return this.http
-        .get(`https://croppy.herokuapp.com/v1/get-target/${slug}`)
+        .get(`${this.host}/${slug}`)
         .subscribe((response: any) => {
           this.redirectUrl = response.data.target;
           this.goToUrl(this.redirectUrl);
@@ -29,4 +34,5 @@ export class UrlsComponent implements OnInit {
   goToUrl(url: string): void {
     window.location.href = url;
   }
+
 }

@@ -3,7 +3,7 @@ import { SocialAuthService } from 'angularx-social-login';
 import { MatchUsername } from './../validators/match-username';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { MatchPassword } from '../validators/match-password';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,26 +18,26 @@ export class SignupComponent implements OnInit {
   errors?: Array<any>;
   inputType:any="password"
   hide=true;
-  authForm = new FormGroup(
+  authForm = new UntypedFormGroup(
     {
-      username: new FormControl('', [
+      username: new UntypedFormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(45),
         Validators.email,
       ]),
-      conf_username: new FormControl('', [
+      conf_username: new UntypedFormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(45),
         Validators.email
       ]),
-      password: new FormControl('', [
+      password: new UntypedFormControl('', [
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(30),
       ]),
-      conf_password: new FormControl('', [
+      conf_password: new UntypedFormControl('', [
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(30),

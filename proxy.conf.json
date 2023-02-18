@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "https://croppy.herokuapp.com",
+    "target": "https://short-url-iypy.onrender.com",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"

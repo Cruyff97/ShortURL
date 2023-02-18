@@ -1,0 +1,11 @@
+{
+  "httpOptions": {
+    "headers": {
+      "prova": "prova"
+    }
+  },
+  "host": {
+    "webapp": "https://shortangular.netlify.app",
+    "backend": "https://short-url-iypy.onrender.com"
+  }
+}

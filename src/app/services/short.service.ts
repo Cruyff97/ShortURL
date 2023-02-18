@@ -1,12 +1,16 @@
-import { infos } from './../interface/infos';
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Slug } from '../slug';
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Injectable } from '@angular/core'
+
+import { infos } from '../interface/infos'
+import { Slug } from '../slug'
+import { ConfigurationService } from './configuration.service'
 
 @Injectable({ providedIn: 'root' })
 export class ShortService {
-  baseURL = 'https://croppy.herokuapp.com';
-  constructor(private http: HttpClient) {}
+baseURL=''
+  constructor(private http: HttpClient, private ConfigurationService:ConfigurationService) {
+    this.baseURL = this.ConfigurationService.getBackendUrl()
+  }
   shortLogged(insertedLink: string, customSlug?: string) {
     if(customSlug !== undefined){
     return this.http.post<Slug>(
@@ -34,6 +38,10 @@ export class ShortService {
     return this.http.get<infos>(`${this.baseURL}/api/user/url/${id}`);
   }
 
+  getTarget(slug:string){
+    return this.http
+      .get(`${this.baseURL}v1/get-target/${slug}`)
+  }
   deleteUrl(url:any){
     const token = localStorage.getItem('id_token')
     var header = {

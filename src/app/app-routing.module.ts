@@ -1,15 +1,16 @@
-import { MapComponent } from './map/map.component';
-import { UrlsComponent } from './urls/urls.component';
-import { HomeComponent } from './home/home.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes, CanActivate  } from '@angular/router';
-import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { MyUrlsComponent } from './my-urls/my-urls.component';
-import { 
-  AuthGuardService as AuthGuard 
-} from './auth/auth-services/auth-guard.service';
-import { FirstLoginComponent } from './first-login/first-login.component';
+import { NgModule } from '@angular/core'
+import { CanActivate, RouterModule, Routes } from '@angular/router'
+
+import { AuthGuardService as AuthGuard } from './auth/auth-services/auth-guard.service'
+import { SigninComponent } from './auth/signin/signin.component'
+import { SignupComponent } from './auth/signup/signup.component'
+import { FirstLoginComponent } from './first-login/first-login.component'
+import { HomeComponent } from './home/home.component'
+import { MapComponent } from './map/map.component'
+import { MyUrlsComponent } from './my-urls/my-urls.component'
+import { ShortService } from './services/short.service'
+import { UrlsComponent } from './urls/urls.component'
+
 const routes: Routes = [
   {
     path: 'home',
@@ -34,4 +35,9 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+
+/*   constructor(private shortService:ShortService){
+    this.shortService.getTarget(slug)
+  } */
+}
