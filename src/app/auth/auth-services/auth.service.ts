@@ -1,24 +1,27 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, tap } from 'rxjs';
-import { LoginRes } from 'src/app/interface/login-res';
-import { IMyUrls } from 'src/app/interface/my-urls';
-import { JwtHelperService} from '@auth0/angular-jwt';
+import { BehaviorSubject, tap } from 'rxjs'
+import { LoginRes } from 'src/app/interface/login-res'
+import { IMyUrls } from 'src/app/interface/my-urls'
+
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Injectable } from '@angular/core'
+import { JwtHelperService } from '@auth0/angular-jwt'
+
+import { ConfigurationService } from '../../services/configuration.service'
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class AuthService {
-  
-  
-  constructor(private http: HttpClient) {}
-  
-  rootUrl = 'https://croppy.herokuapp.com';
+
+
+  constructor(private http: HttpClient, private configurationService: ConfigurationService) {}
+
+  baseUrl = this.configurationService.getBackendUrl()
   signedin$ = new BehaviorSubject(false);
 
-  public isAuthenticated(): boolean {  
-    const jwtHelper = new JwtHelperService() 
+  public isAuthenticated(): boolean {
+    const jwtHelper = new JwtHelperService()
     const token = localStorage.getItem('id_token')!;
     return !jwtHelper.isTokenExpired(token);
   }
@@ -26,7 +29,7 @@ export class AuthService {
 validateJwt() {
   let token = localStorage.getItem('id_token');
 
-    return this.http.get(`${this.rootUrl}/validate/jwt`);
+    return this.http.get(`${this.baseUrl}/validate/jwt`);
   }
 
   loggedIn() {
@@ -38,10 +41,10 @@ validateJwt() {
 
   signUp(credentials: any) {
     let headers = new HttpHeaders({
-      'Access-Control-Allow-Origin': `${this.rootUrl}`,
+      'Access-Control-Allow-Origin': `${this.baseUrl}`,
     });
     return this.http
-      .post(`${this.rootUrl}/v1/auth/register`, credentials, {
+      .post(`${this.baseUrl}/v1/auth/register`, credentials, {
         headers: headers,
       })
         }
@@ -56,7 +59,7 @@ validateJwt() {
       'Content-Type': 'application/json',
     });
     return this.http
-      .post<LoginRes>(`${this.rootUrl}/v1/auth/login`, credentials, {
+      .post<LoginRes>(`${this.baseUrl}/v1/auth/login`, credentials, {
         headers: headers,
       })
       .pipe(
@@ -70,6 +73,6 @@ get username(){
 }
   get myUrls() {
 
-    return this.http.get<IMyUrls>(`${this.rootUrl}/api/user/urls`);
+    return this.http.get<IMyUrls>(`${this.baseUrl}/api/user/urls`);
   }
 }
