@@ -23,7 +23,7 @@ export class UrlsComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       const slug = params['slug'];
       return this.http
-        .get(`${this.host}/${slug}`)
+        .get(`${this.host}/v1/${slug}`)
         .subscribe((response: any) => {
           this.redirectUrl = response.data.target;
           this.goToUrl(this.redirectUrl);
