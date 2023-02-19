@@ -24,7 +24,7 @@
                 *ngIf="inputType !== 'password'"
             ></mat-icon>
             <mat-icon
-                *ngIf="inputType == 'password'"
+                *ngIf="inputType === 'password'"
                 matSuffix
                 (click)="hide = !hide"
                 >{{ hide ? "visibility_off" : "visibility" }}</mat-icon
