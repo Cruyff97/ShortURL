@@ -1,8 +1,3 @@
-import {
-    GoogleLoginProvider,
-    SocialAuthServiceConfig,
-    SocialLoginModule
-} from "angularx-social-login"
 import { NgxSpinnerModule } from "ngx-spinner"
 
 import { ClipboardModule } from "@angular/cdk/clipboard"
@@ -12,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms"
 import { BrowserModule } from "@angular/platform-browser"
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { JWT_OPTIONS, JwtHelperService, JwtModule } from "@auth0/angular-jwt"
-import { ScullyLibModule } from "@scullyio/ng-lib"
 
 import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from "./app.component"
@@ -64,18 +58,16 @@ export function tokenGetter() {
             }
         }),
         HttpClientModule,
-        SocialLoginModule,
         ClipboardModule,
         NgxSpinnerModule,
         FormsModule,
         ReactiveFormsModule,
         MaterialModule,
-        AppRoutingModule,
-        ScullyLibModule
+        AppRoutingModule
     ],
     providers: [
         AuthGuardService,
-        {
+        /*         {
             provide: "SocialAuthServiceConfig",
             useValue: {
                 autoLogin: true, //keeps the user signed in
@@ -88,7 +80,7 @@ export function tokenGetter() {
                     }
                 ]
             } as SocialAuthServiceConfig
-        },
+        }, */
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         LoadingInterceptor,
         {
