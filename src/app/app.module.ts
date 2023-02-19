@@ -13,7 +13,10 @@ import { AppComponent } from "./app.component"
 import { AuthGuardService } from "./auth/auth-services/auth-guard.service"
 import { AuthInterceptor } from "./auth/auth-services/auth-interceptor"
 import { SigninComponent } from "./auth/signin/signin.component"
-import { ErrorModal, SignupComponent } from "./auth/signup/signup.component"
+import {
+    ErrorModalComponent,
+    SignupComponent
+} from "./auth/signup/signup.component"
 import { FirstLoginComponent } from "./first-login/first-login.component"
 import { HeaderComponent } from "./header/header.component"
 import { HomeComponent } from "./home/home.component"
@@ -39,7 +42,7 @@ export function tokenGetter() {
         SigninComponent,
         SignupComponent,
         MyUrlsComponent,
-        ErrorModal,
+        ErrorModalComponent,
         MapComponent,
         MyUrlsOverviewComponent,
         InputComponent,

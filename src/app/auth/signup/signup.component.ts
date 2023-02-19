@@ -1,23 +1,22 @@
-import { AuthService } from "./../auth-services/auth.service"
-import { SocialAuthService } from "angularx-social-login"
-import { MatchUsername } from "./../validators/match-username"
-import { GoogleLoginProvider } from "angularx-social-login"
-import { Component, Input, OnInit } from "@angular/core"
+import { Component, Inject, Input, OnInit } from "@angular/core"
 import {
-    UntypedFormGroup,
     UntypedFormControl,
+    UntypedFormGroup,
     Validators
 } from "@angular/forms"
-import { MatchPassword } from "../validators/match-password"
+import { MAT_DIALOG_DATA, MatDialog } from "@angular/material/dialog"
 import { Router } from "@angular/router"
-import { MatDialog } from "@angular/material/dialog"
+
+import { AuthService } from "../auth-services/auth.service"
+import { MatchPassword } from "../validators/match-password"
+import { MatchUsername } from "../validators/match-username"
 
 @Component({
     selector: "app-signup",
     templateUrl: "./signup.component.html",
     styleUrls: ["./signup.component.css"]
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
     logged: boolean = false
     errors?: Array<any>
     inputType: any = "password"
@@ -58,29 +57,26 @@ export class SignupComponent implements OnInit {
         private matchpassword: MatchPassword,
         private matchusername: MatchUsername,
         private authService: AuthService,
-        private socialAuthService: SocialAuthService,
         private router: Router,
         public dialog: MatDialog
     ) {}
 
-    ngOnInit(): void {}
-
-    loginWithGoogle(): void {
+    /*     loginWithGoogle(): void {
         this.socialAuthService
             .signIn(GoogleLoginProvider.PROVIDER_ID)
             .then(() => this.router.navigate(["home"]))
-    }
+    } */
 
     onSubmit() {
         this.authService.signUp(this.authForm.value).subscribe({
             next: (res: any) => {
-                this.openDialog(ErrorModal, {
+                this.openDialog(ErrorModalComponent, {
                     data: { created: "Account created" }
                 })
             },
             error: (err: any) => {
                 this.errors = err.error
-                this.openDialog(ErrorModal, {
+                this.openDialog(ErrorModalComponent, {
                     data: {
                         dialogTitle: err.error
                     }
@@ -93,13 +89,11 @@ export class SignupComponent implements OnInit {
         this.dialog.open(component, options)
     }
 }
-import { MAT_DIALOG_DATA } from "@angular/material/dialog"
-import { Inject } from "@angular/core"
 @Component({
-    selector: "error-modal",
+    selector: "app-error-modal",
     templateUrl: "errorModal.component.html"
 })
-export class ErrorModal {
+export class ErrorModalComponent {
     dialogTitle?: any
     dialogcreated?: any
     more_errors?: boolean
