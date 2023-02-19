@@ -1,44 +1,59 @@
 <div>
-  <div class="form-field">
-    <mat-form-field class="input-login">
-      <mat-label>{{ label }}</mat-label>
-      <input
-      *ngIf="inputType !== 'password'"
-        type="{{ inputType }}"
-        matInput
-        [formControl]="control"
-        placeholder="{{ label }}"
-        autocomplete="off"
-      />
-      <input *ngIf="inputType ==='password'"
-      [type]=" hide ? 'password' : 'text'"
-      matInput
-      [formControl]="control"
-      placeholder="{{ label }}"
-      autocomplete="off"
-    />
-    <mat-icon matSuffix class="spacer" *ngIf="inputType!=='password'"></mat-icon>
-      <mat-icon *ngIf="inputType=='password'" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </mat-form-field>
-  </div>
+    <div class="form-field">
+        <mat-form-field class="input-login">
+            <mat-label>{{ label }}</mat-label>
+            <input
+                *ngIf="inputType !== 'password'"
+                type="{{ inputType }}"
+                matInput
+                [formControl]="control"
+                placeholder="{{ label }}"
+                autocomplete="off"
+            />
+            <input
+                *ngIf="inputType === 'password'"
+                [type]="hide ? 'password' : 'text'"
+                matInput
+                [formControl]="control"
+                placeholder="{{ label }}"
+                autocomplete="off"
+            />
+            <mat-icon
+                matSuffix
+                class="spacer"
+                *ngIf="inputType !== 'password'"
+            ></mat-icon>
+            <mat-icon
+                *ngIf="inputType == 'password'"
+                matSuffix
+                (click)="hide = !hide"
+                >{{ hide ? "visibility_off" : "visibility" }}</mat-icon
+            >
+        </mat-form-field>
+    </div>
 
-  <!-- error handling -->
-  <div
-    class="is-flex has-text-centered is-flex-direction-column	 is-justify-content-center ui pointing red basic label"
-    *ngIf="showErrors()"
-  >
-    <mat-error class="mb-2" *ngIf="control.errors!['required']">required</mat-error>
-    <mat-error class="mb-2" *ngIf="control.errors!['minlength']">
-      Value you entered is
-      {{ control.errors!["minlength"]["actualLength"] }} characthers long, but
-      it must be at least {{ control.errors!["minlength"]["requiredLength"] }}
-    </mat-error>
-    <mat-error class="mb-2" *ngIf="control.errors!['maxlength']">
-      Value you entered is
-      {{ control.errors!["maxlength"]["actualLength"] }} characthers long, but
-      it cannot be longer than
-      {{ control.errors!["maxlength"]["requiredLength"] }} characthers
-    </mat-error>
-      <mat-error class="mb-2" *ngIf="control.errors!['pattern'] ">Invalid Format</mat-error>
-  </div>
+    <!-- error handling -->
+    <div
+        class="is-flex has-text-centered is-flex-direction-column is-justify-content-center ui pointing red basic label"
+        *ngIf="showErrors()"
+    >
+        <mat-error class="mb-2" *ngIf="control.errors!['required']"
+            >required</mat-error
+        >
+        <mat-error class="mb-2" *ngIf="control.errors!['minlength']">
+            Value you entered is
+            {{ control.errors!["minlength"]["actualLength"] }} characthers long,
+            but it must be at least
+            {{ control.errors!["minlength"]["requiredLength"] }}
+        </mat-error>
+        <mat-error class="mb-2" *ngIf="control.errors!['maxlength']">
+            Value you entered is
+            {{ control.errors!["maxlength"]["actualLength"] }} characthers long,
+            but it cannot be longer than
+            {{ control.errors!["maxlength"]["requiredLength"] }} characthers
+        </mat-error>
+        <mat-error class="mb-2" *ngIf="control.errors!['pattern']"
+            >Invalid Format</mat-error
+        >
+    </div>
 </div>

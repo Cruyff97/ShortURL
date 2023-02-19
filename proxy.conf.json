@@ -1,8 +1,8 @@
 {
-  "/api/*": {
-    "target": "https://short-url-iypy.onrender.com",
-    "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug"
-  }
+    "/api/*": {
+        "target": "https://short-url-iypy.onrender.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
 }

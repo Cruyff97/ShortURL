@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing"
 
-import { FirstLoginComponent } from './first-login.component';
+import { FirstLoginComponent } from "./first-login.component"
 
-describe('FirstLoginComponent', () => {
-  let component: FirstLoginComponent;
-  let fixture: ComponentFixture<FirstLoginComponent>;
+describe("FirstLoginComponent", () => {
+    let component: FirstLoginComponent
+    let fixture: ComponentFixture<FirstLoginComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FirstLoginComponent ]
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [FirstLoginComponent]
+        }).compileComponents()
     })
-    .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(FirstLoginComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(FirstLoginComponent)
+        component = fixture.componentInstance
+        fixture.detectChanges()
+    })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    it("should create", () => {
+        expect(component).toBeTruthy()
+    })
+})

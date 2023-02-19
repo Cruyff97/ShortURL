@@ -1,4 +1,4 @@
-.container{
+.container {
     margin-top: 90px;
     display: flex;
     align-content: center;
@@ -7,21 +7,20 @@
     padding: 25px;
     background-color: white;
     border-radius: 8px;
-    box-shadow:  0 15px 7px #f2f3f4;
+    box-shadow: 0 15px 7px #f2f3f4;
 }
-.card{
-    
+.card {
     width: calc(50% - 16px);
 }
-.stats-overview{
+.stats-overview {
     display: flex;
     justify-content: space-between;
     align-content: center;
     align-items: center;
 }
-.icon-overview{
-   fill:  #313552;
+.icon-overview {
+    fill: #313552;
 }
-.overwiew-card-title{
+.overwiew-card-title {
     color: #858282;
 }

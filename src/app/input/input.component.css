@@ -1,13 +1,12 @@
 .ui.pointing {
-  display: table;
+    display: table;
 }
 .form-field {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
-.spacer{
-  width: 1em;
+.spacer {
+    width: 1em;
 }
-

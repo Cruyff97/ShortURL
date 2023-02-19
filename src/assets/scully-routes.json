@@ -1,1 +1,8 @@
-[{"route":"/home"},{"route":"/signup"},{"route":"/signin"},{"route":"/myUrls"},{"route":"/map"},{"route":"/"}]
+[
+    { "route": "/home" },
+    { "route": "/signup" },
+    { "route": "/signin" },
+    { "route": "/myUrls" },
+    { "route": "/map" },
+    { "route": "/" }
+]

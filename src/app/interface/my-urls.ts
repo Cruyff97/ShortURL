@@ -1,3 +1,3 @@
 export interface IMyUrls {
-  data: any;
+    data: any
 }

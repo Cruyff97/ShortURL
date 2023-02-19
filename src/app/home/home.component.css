@@ -1,117 +1,120 @@
 mat-card {
-  margin: 30px;
+    margin: 30px;
 }
 .link-input {
-  display: block;
+    display: block;
 }
 .link {
-  cursor: pointer;
+    cursor: pointer;
 }
 .div-search {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 .shorten-btn {
-  color: white;
-  position: absolute;
-  top: -11px;
-  right: -3px;
+    color: white;
+    position: absolute;
+    top: -11px;
+    right: -3px;
 }
 .shortener {
-  width: 603px;
+    width: 603px;
 }
 .short-man {
-  padding-right: 20px;
-  margin-top: 48px;
+    padding-right: 20px;
+    margin-top: 48px;
 }
 .main {
-  align-items: center;
+    align-items: center;
 }
 .insert {
-  margin-bottom: 10px;
-  color: #11d596;
-  font-weight: bolder;
-  font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #11d596;
+    font-weight: bolder;
+    font-size: 1.2em;
 }
 .title {
-  font-weight: 500;
-  margin: 55px;
-  color: #313552;
-  margin-top: -89px;
+    font-weight: 500;
+    margin: 55px;
+    color: #313552;
+    margin-top: -89px;
 }
 .copy-btn {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 .columns {
-  margin-right: 0;
+    margin-right: 0;
 }
 
-.expected-title{
-  margin-right: 10px;
+.expected-title {
+    margin-right: 10px;
 }
 @media screen and (max-width: 768px) {
-  .title {
-    margin-top: 70px;
-  }
-  .gen-link{
-    display: block;
-  }
+    .title {
+        margin-top: 70px;
+    }
+    .gen-link {
+        display: block;
+    }
 }
-.slug{
-  display: flex;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .main{
-    margin-top: 142px;
-  }
-  .gen-link{
+.slug {
     display: flex;
     align-items: center;
-  }
 }
-  
+@media screen and (min-width: 768px) {
+    .main {
+        margin-top: 142px;
+    }
+    .gen-link {
+        display: flex;
+        align-items: center;
+    }
+}
 
-.ft-green-tick{
-  margin-right: 10px;
+.ft-green-tick {
+    margin-right: 10px;
 }
 /* animation-success-icon */
 
- @supports (animation: grow .5s cubic-bezier(.25, .25, .25, 1) forwards) {
-  .tick {
-     stroke-opacity: 0;
-     stroke-dasharray: 29px;
-     stroke-dashoffset: 29px;
-     animation: draw .5s cubic-bezier(.25, .25, .25, 1) forwards;
-     animation-delay: .6s
- }
+@supports (animation: grow 0.5s cubic-bezier(0.25, 0.25, 0.25, 1) forwards) {
+    .tick {
+        stroke-opacity: 0;
+        stroke-dasharray: 29px;
+        stroke-dashoffset: 29px;
+        animation: draw 0.5s cubic-bezier(0.25, 0.25, 0.25, 1) forwards;
+        animation-delay: 0.6s;
+    }
 
- .circle {
-     fill-opacity: 0;
-     stroke: #11d596;
-     stroke-width: 16px;
-     transform-origin: center;
-     transform: scale(0);
-     animation: grow 1s cubic-bezier(.25, .25, .25, 1.25) forwards;   
- }   
+    .circle {
+        fill-opacity: 0;
+        stroke: #11d596;
+        stroke-width: 16px;
+        transform-origin: center;
+        transform: scale(0);
+        animation: grow 1s cubic-bezier(0.25, 0.25, 0.25, 1.25) forwards;
+    }
 }
 
 @keyframes grow {
- 60% {
-     transform: scale(.8);
-     stroke-width: 4px;
-     fill-opacity: 0;
- }
- 100% {
-     transform: scale(.9);
-     stroke-width: 8px;
-     fill-opacity: 1;
-     fill: #11d596;
- }
+    60% {
+        transform: scale(0.8);
+        stroke-width: 4px;
+        fill-opacity: 0;
+    }
+    100% {
+        transform: scale(0.9);
+        stroke-width: 8px;
+        fill-opacity: 1;
+        fill: #11d596;
+    }
 }
 
 @keyframes draw {
- 0%, 100% { stroke-opacity: 1; }
- 100% { stroke-dashoffset: 0; }
+    0%,
+    100% {
+        stroke-opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
-

@@ -1,65 +1,65 @@
 .title {
-  margin-top: 60px;
-  margin-bottom: 30px;
+    margin-top: 60px;
+    margin-bottom: 30px;
 }
 
 :host {
-  display: block;
-  margin-bottom: 1em;
-  margin-top: 140px;
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 140px;
 }
 .basic.label {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 button {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 .form {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
 .register-title {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
 .container-title {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
-.created{
+.created {
     color: #11d596;
 }
 @media screen and (max-width: 768px) {
-  .card {
-    margin: auto 7vw;
-    }
-  }
-  
-  @media screen and (min-width: 768px) {
     .card {
-      margin: auto 30vw;
-      }
+        margin: auto 7vw;
     }
+}
 
-    .to-sign-in{
-      margin-bottom: 15px;
+@media screen and (min-width: 768px) {
+    .card {
+        margin: auto 30vw;
     }
-    .google-login-btn{
-      margin-bottom: 15px;
-    }
-    .button-redirect-signin{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .already-account{
-      text-align: center;
-      margin-top: 55px;
-    }
-    .pass-info{
-      font-size: 0.7em;
+}
+
+.to-sign-in {
+    margin-bottom: 15px;
+}
+.google-login-btn {
+    margin-bottom: 15px;
+}
+.button-redirect-signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.already-account {
+    text-align: center;
+    margin-top: 55px;
+}
+.pass-info {
+    font-size: 0.7em;
     max-width: 280px;
-    }
+}

@@ -1,21 +1,18 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from "@angular/core"
 
-import configuration from '../config/environment.json'
+import configuration from "../config/environment.json"
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: "root"
 })
 export class ConfigurationService {
+    constructor() {}
 
-constructor() {
-}
+    getBackendUrl() {
+        return structuredClone(configuration.host.backend)
+    }
 
-getBackendUrl(){
-  return structuredClone(configuration.host.backend)
-}
-
-getHost(){
-  return structuredClone(configuration.host.webapp)
-}
-
+    getHost() {
+        return structuredClone(configuration.host.webapp)
+    }
 }

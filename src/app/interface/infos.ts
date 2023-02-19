@@ -1,6 +1,6 @@
 export interface infos {
-  data: any;
-  message: string | null;
-  status: number;
-  clicks: any;
+    data: any
+    message: string | null
+    status: number
+    clicks: any
 }

@@ -3,120 +3,118 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Spartan:wght@700&family=Righteous&family=Rubik&display=swap");
 
 body {
-  height: 100%;
+    height: 100%;
 }
 body {
-  margin: 0;
-  font-family: Righteous;
-  background-color:whitesmoke;
+    margin: 0;
+    font-family: Righteous;
+    background-color: whitesmoke;
 }
-p{
-  font-family: Rubik;
+p {
+    font-family: Rubik;
 }
 h1 {
-  font-size: x-large;
-  font-weight: 400;
+    font-size: x-large;
+    font-weight: 400;
 }
-.material-icons{
-  font-family: 'Material Icons' !important;
+.material-icons {
+    font-family: "Material Icons" !important;
 }
 .example-spacer {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 .background {
-  position: absolute;
+    position: absolute;
 
-  display: block;
+    display: block;
 
-  top: 0;
+    top: 0;
 
-  left: 0;
+    left: 0;
 
-  z-index: 0;
+    z-index: 0;
 }
 
 .input-login .mat-form-field-infix {
-  width: 256px;
+    width: 256px;
 }
 html {
-  overflow: hidden;
-  height: 100%;
+    overflow: hidden;
+    height: 100%;
 }
 
 body {
-  height: 100%;
-  overflow: auto;
-  max-width: 100vw;
+    height: 100%;
+    overflow: auto;
+    max-width: 100vw;
 }
 .marker {
-  text-align: center;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-  background-size: cover;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  cursor: pointer;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.marker-major{
-  background-color: #11d596;
+.marker-major {
+    background-color: #11d596;
 }
 
-.marker-minor{
-  width: 15px;
-  height: 15px;
-  background-color: #9ae2cb;
+.marker-minor {
+    width: 15px;
+    height: 15px;
+    background-color: #9ae2cb;
 }
-.where-title{
-  font-size: 15px;
-  font-weight: bold;
-  color: #11d596;
+.where-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #11d596;
 }
-.clicks-num{
-  font-size: 11px;
-  font-weight: bold;
-  color: #11d596;
+.clicks-num {
+    font-size: 11px;
+    font-weight: bold;
+    color: #11d596;
 }
-
-
 
 .map-overlay {
-  position: absolute;
-  right: 5px;
-  background: #fff;
-  margin-right: 20px;
-  font-family: Arial, sans-serif;
-  overflow: auto;
-  border-radius: 3px;
-  bottom: 92px
+    position: absolute;
+    right: 5px;
+    background: #fff;
+    margin-right: 20px;
+    font-family: Arial, sans-serif;
+    overflow: auto;
+    border-radius: 3px;
+    bottom: 92px;
 }
 
 #features {
-  top: 0;
-  height: 100px;
-  margin-top: 20px;
-  width: 250px;
+    top: 0;
+    height: 100px;
+    margin-top: 20px;
+    width: 250px;
 }
 
 #legend {
-  padding: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  line-height: 18px;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 18px;
 }
 
 .legend-key {
-  display: inline-block;
-  border-radius: 20%;
-  width: 10px;
-  height: 10px;
-  margin-right: 5px;
+    display: inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
 }
 
-.btn-align-custom{
-  width: 280px;
+.btn-align-custom {
+    width: 280px;
 }
-.accent-color{
-  color: #11d596;
+.accent-color {
+    color: #11d596;
 }

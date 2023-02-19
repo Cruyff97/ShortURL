@@ -1,104 +1,155 @@
 <p>
-  <mat-toolbar>
-      <h3>
-        <a
-        mat-button
-          class="logo"
-          [routerLink]="['home']"
-          routerLinkActive="router-link-active"
-          >shortURL</a
-        >
-      </h3>
-    <span class="example-spacer"></span>
-    <!-- IMPLEMENT SEARCH-BAR FOR SEARCHING BY TITLE -->
-     <!-- <div class="is-hidden-mobile search-bar">
-      <app-search-bar *ngIf="router.url === '/myUrls'"></app-search-bar>
-    </div> --> 
-    <div class="menu">
-      <div class="is-hidden-desktop is-hidden-tablet" id="menu">
-        <input
-          (click)="onWrapper()"
-          type="checkbox"
-          class="checkbox-menu"
-          id="active"
-        />
-        <div class="bars">
-          <label id="menu-bar" for="active" class="menu-btn">
-            <div id="bar1" class="bar"></div>
-            <div id="bar2" class="bar"></div>
-            <div id="bar3" class="bar"></div>
-          </label>
-        </div>
-        <div
-          [class.activewrap]="active_wrap"
-          [class.disactivewrap]="disactive_wrap"
-          class="wrapper"
-        >
-          <ul>
-            <li class="header-li" (click)="onMenuItemClick()">
-              <a mat-button routerLink="home" routerLinkActive="router-link-active">
-                Home
-              </a>
-            </li>
-            <li class="header-li" (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
-              <a mat-button routerLink="signup" routerLinkActive="router-link-active">
-                Sign Up
-              </a>
-            </li>
-            <li class="header-li" (click)="onMenuItemClick()" *ngIf="!signedin" color="primary">
-              <a mat-button routerLink="signin" routerLinkActive="router-link-active">
-                Sign In
-              </a>
-            </li>
-            <li class="header-li" (click)="onMenuItemClick()" *ngIf="signedin" color="primary">
-              <a
-              mat-button
-                [routerLink]="['myUrls']"
+    <mat-toolbar>
+        <h3>
+            <a
+                mat-button
+                class="logo"
+                [routerLink]="['home']"
                 routerLinkActive="router-link-active"
-              >
-                My URLs
-              </a>
-            </li>
-            <li *ngIf="signedin" class="header-li" (click)="onMenuItemClick()">
-              <a mat-button routerLink="home" routerLinkActive="router-link-active">
-               <mat-icon>account_circle</mat-icon>
-              </a>
-            </li>
-            <li class="header-li">
-              <a mat-button (click)="onSignOut()" *ngIf="signedin"> Sign Out </a>
-            </li>
-          </ul>
+                >shortURL</a
+            >
+        </h3>
+        <span class="example-spacer"></span>
+        <!-- IMPLEMENT SEARCH-BAR FOR SEARCHING BY TITLE -->
+        <!-- <div class="is-hidden-mobile search-bar">
+      <app-search-bar *ngIf="router.url === '/myUrls'"></app-search-bar>
+    </div> -->
+        <div class="menu">
+            <div class="is-hidden-desktop is-hidden-tablet" id="menu">
+                <input
+                    (click)="onWrapper()"
+                    type="checkbox"
+                    class="checkbox-menu"
+                    id="active"
+                />
+                <div class="bars">
+                    <label id="menu-bar" for="active" class="menu-btn">
+                        <div id="bar1" class="bar"></div>
+                        <div id="bar2" class="bar"></div>
+                        <div id="bar3" class="bar"></div>
+                    </label>
+                </div>
+                <div
+                    [class.activewrap]="active_wrap"
+                    [class.disactivewrap]="disactive_wrap"
+                    class="wrapper"
+                >
+                    <ul>
+                        <li class="header-li" (click)="onMenuItemClick()">
+                            <a
+                                mat-button
+                                routerLink="home"
+                                routerLinkActive="router-link-active"
+                            >
+                                Home
+                            </a>
+                        </li>
+                        <li
+                            class="header-li"
+                            (click)="onMenuItemClick()"
+                            *ngIf="!signedin"
+                            color="primary"
+                        >
+                            <a
+                                mat-button
+                                routerLink="signup"
+                                routerLinkActive="router-link-active"
+                            >
+                                Sign Up
+                            </a>
+                        </li>
+                        <li
+                            class="header-li"
+                            (click)="onMenuItemClick()"
+                            *ngIf="!signedin"
+                            color="primary"
+                        >
+                            <a
+                                mat-button
+                                routerLink="signin"
+                                routerLinkActive="router-link-active"
+                            >
+                                Sign In
+                            </a>
+                        </li>
+                        <li
+                            class="header-li"
+                            (click)="onMenuItemClick()"
+                            *ngIf="signedin"
+                            color="primary"
+                        >
+                            <a
+                                mat-button
+                                [routerLink]="['myUrls']"
+                                routerLinkActive="router-link-active"
+                            >
+                                My URLs
+                            </a>
+                        </li>
+                        <li
+                            *ngIf="signedin"
+                            class="header-li"
+                            (click)="onMenuItemClick()"
+                        >
+                            <a
+                                mat-button
+                                routerLink="home"
+                                routerLinkActive="router-link-active"
+                            >
+                                <mat-icon>account_circle</mat-icon>
+                            </a>
+                        </li>
+                        <li class="header-li">
+                            <a
+                                mat-button
+                                (click)="onSignOut()"
+                                *ngIf="signedin"
+                            >
+                                Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- menu pc -->
+
+            <div class="menu-bg" id="menu-bg"></div>
+
+            <div class="is-hidden-mobile menu-desktop">
+                <a
+                    class="header-li"
+                    [routerLink]="['home']"
+                    routerLinkActive="router-link-active"
+                >
+                    <button mat-button>Home</button>
+                </a>
+                <a
+                    class="header-li"
+                    [routerLink]="['myUrls']"
+                    routerLinkActive="router-link-active"
+                >
+                    <button *ngIf="signedin" mat-button>myURLs</button>
+                </a>
+                <a class="header-li" routerLink="./signup">
+                    <button *ngIf="!signedin" mat-button>Sign Up</button>
+                </a>
+                <a
+                    class="header-li"
+                    routerLink="signin"
+                    routerLinkActive="router-link-active"
+                >
+                    <button *ngIf="!signedin" mat-button>Login</button>
+                </a>
+                <button
+                    class="header-li"
+                    (click)="onSignOut()"
+                    *ngIf="signedin"
+                    mat-button
+                >
+                    Sign Out
+                </button>
+            </div>
         </div>
-      </div>
-
-      <!-- menu pc -->
-
-      <div class="menu-bg" id="menu-bg"></div>
-
-
-      <div class="is-hidden-mobile menu-desktop">
-        <a class="header-li" [routerLink]="['home']" routerLinkActive="router-link-active">
-        <button mat-button>
-          Home
-          </button>
-        </a>
-        <a class="header-li" [routerLink]="['myUrls']" routerLinkActive="router-link-active">
-        <button *ngIf="signedin" mat-button>
-          myURLs
-        </button>
-      </a>
-      <a class="header-li" routerLink="./signup">
-        <button *ngIf="!signedin" mat-button>
-        Sign Up
-        </button>
-      </a>
-        <a class="header-li" routerLink="signin" routerLinkActive="router-link-active">
-          <button *ngIf="!signedin" mat-button>Login</button>
-        </a>
-        <button class="header-li" (click)="onSignOut()" *ngIf="signedin" mat-button>
-          Sign Out
-        </button>
-      </div>
-    </div>
-  </mat-toolbar>
+    </mat-toolbar>
 </p>
